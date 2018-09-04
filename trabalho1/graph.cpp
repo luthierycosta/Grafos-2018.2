@@ -26,6 +26,14 @@ public:
 
 		return res;
 	}
+
+	bool isConnected() {
+		for (Vertex v: vertList)
+			if (!v.isConnected())
+				return false;
+
+		return true;
+	}
 }
 
 class Vertex {
@@ -38,11 +46,15 @@ public:
 	}
 
 	void addAdj(Vertex v) {
-		adj_list.push_back(v);
+		this.adj_list.push_back(v);
 	}
 
 	int degree() {
 		return adj_list.size;
+	}
+
+	bool isConnected() {
+		return (adj_list.size != 0);
 	}
 }
 
