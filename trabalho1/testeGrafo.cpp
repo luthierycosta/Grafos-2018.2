@@ -1,17 +1,33 @@
 #include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
 void nGrau (vector<vector< int> > graph, int vert){
 	for (int i = 0; i < vert; i++)
 		{
-			printf("vertice %d grau: %d\n", i, graph[i].size());
+			printf("vertice %d grau: %ld\n", i, graph[i].size());
 		}	
 }
 
+void open (const char karate.txt, ios::in)
+
+
+vector<vector< int> > getFile(){
+	ifstream karate;
+	karate.open ("karate.txt");
+
+	while(infile)
+	//
+	// montar o grafo
+	//
+
+	karate.close;
+}
+
 int main(){
-	int vert = 9;
-	int ares = 10;
+	vector<vector< int> > graph = getFile();
 	vector<vector< int> > graph(vert);
 
 	for (int i = 0; i < ares; i++)

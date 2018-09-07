@@ -1,5 +1,424 @@
-The file karate.gml contains the network of friendships between the 34
-members of a karate club at a US university, as described by Wayne Zachary
-in 1977.  If you use these data in your work, please cite W. W. Zachary, An
-information flow model for conflict and fission in small groups, Journal of
-Anthropological Research 33, 452-473 (1977).
+id 1
+id 2
+id 3
+id 4
+id 5
+id 6
+id 7
+id 8
+id 9
+id 10
+id 11
+id 12
+id 13
+id 14
+id 15
+id 16
+id 17
+id 18
+id 19
+id 20
+id 21
+id 22
+id 23
+id 24
+id 25
+id 26
+id 27
+id 28
+id 29
+id 30
+id 31
+id 32
+id 33
+id 34
+  
+  edge
+  
+     2
+     1
+  
+  edge
+  
+     3
+     1
+  
+  edge
+  
+     3
+     2
+  
+  edge
+  
+     4
+     1
+  
+  edge
+  
+     4
+     2
+  
+  edge
+  
+     4
+     3
+  
+  edge
+  
+     5
+     1
+  
+  edge
+  
+     6
+     1
+  
+  edge
+  
+     7
+     1
+  
+  edge
+  
+     7
+     5
+  
+  edge
+  
+     7
+     6
+  
+  edge
+  
+     8
+     1
+  
+  edge
+  
+     8
+     2
+  
+  edge
+  
+     8
+     3
+  
+  edge
+  
+     8
+     4
+  
+  edge
+  
+     9
+     1
+  
+  edge
+  
+     9
+     3
+  
+  edge
+  
+     10
+     3
+  
+  edge
+  
+     11
+     1
+  
+  edge
+  
+     11
+     5
+  
+  edge
+  
+     11
+     6
+  
+  edge
+  
+     12
+     1
+  
+  edge
+  
+     13
+     1
+  
+  edge
+  
+     13
+     4
+  
+  edge
+  
+     14
+     1
+  
+  edge
+  
+     14
+     2
+  
+  edge
+  
+     14
+     3
+  
+  edge
+  
+     14
+     4
+  
+  edge
+  
+     17
+     6
+  
+  edge
+  
+     17
+     7
+  
+  edge
+  
+     18
+     1
+  
+  edge
+  
+     18
+     2
+  
+  edge
+  
+     20
+     1
+  
+  edge
+  
+     20
+     2
+  
+  edge
+  
+     22
+     1
+  
+  edge
+  
+     22
+     2
+  
+  edge
+  
+     26
+     24
+  
+  edge
+  
+     26
+     25
+  
+  edge
+  
+     28
+     3
+  
+  edge
+  
+     28
+     24
+  
+  edge
+  
+     28
+     25
+  
+  edge
+  
+     29
+     3
+  
+  edge
+  
+     30
+     24
+  
+  edge
+  
+     30
+     27
+  
+  edge
+  
+     31
+     2
+  
+  edge
+  
+     31
+     9
+  
+  edge
+  
+     32
+     1
+  
+  edge
+  
+     32
+     25
+  
+  edge
+  
+     32
+     26
+  
+  edge
+  
+     32
+     29
+  
+  edge
+  
+     33
+     3
+  
+  edge
+  
+     33
+     9
+  
+  edge
+  
+     33
+     15
+  
+  edge
+  
+     33
+     16
+  
+  edge
+  
+     33
+     19
+  
+  edge
+  
+     33
+     21
+  
+  edge
+  
+     33
+     23
+  
+  edge
+  
+     33
+     24
+  
+  edge
+  
+     33
+     30
+  
+  edge
+  
+     33
+     31
+  
+  edge
+  
+     33
+     32
+  
+  edge
+  
+     34
+     9
+  
+  edge
+  
+     34
+     10
+  
+  edge
+  
+     34
+     14
+  
+  edge
+  
+     34
+     15
+  
+  edge
+  
+     34
+     16
+  
+  edge
+  
+     34
+     19
+  
+  edge
+  
+     34
+     20
+  
+  edge
+  
+     34
+     21
+  
+  edge
+  
+     34
+     23
+  
+  edge
+  
+     34
+     24
+  
+  edge
+  
+     34
+     27
+  
+  edge
+  
+     34
+     28
+  
+  edge
+  
+     34
+     29
+  
+  edge
+  
+     34
+     30
+  
+  edge
+  
+     34
+     31
+  
+  edge
+  
+     34
+     32
+  
+  edge
+  
+     34
+     33
