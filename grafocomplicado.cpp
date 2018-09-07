@@ -11,8 +11,8 @@ class Graph {
 	list<Edge> edgeList;
 
 public:
-	void addVert(string label) {
-		vertList.push_back(new Vertex(label));
+	void addVert(int id) {
+		vertList.push_back(new Vertex(id));
 	}
 
 	void addEdge(Vertex a, Vertex b, int value) {
@@ -34,15 +34,20 @@ public:
 
 		return true;
 	}
+
+	~Graph() {
+		for (Vertex v: vertList) delete(v);
+		for (Edge ed: edgeList)	delete(ed);
+	}
 }
 
 class Vertex {
-	string label;
+	int id;
 	list<Vertex> adj_list;
 
 public:
-	Vertex(string str) {
-		this.label = str;
+	Vertex(int new_id) {
+		this.id = new_id;
 	}
 
 	void addAdj(Vertex v) {
@@ -71,6 +76,6 @@ public:
 	}
 
 	bool isLoop() {
-		return vertices.first == vertices.second;
+		return (vertices.first == vertices.second);
 	}
 }
