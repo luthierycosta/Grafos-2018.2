@@ -1,10 +1,8 @@
 #include "lerArquivo.h"
-#include "grau.h"
+#include "grafo.h"
 #include "imprime.h"
 
 using namespace std;
-
-typedef vector<vector<int>> Grafo;
 
 int main() {
 	

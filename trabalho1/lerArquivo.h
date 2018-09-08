@@ -1,3 +1,4 @@
+#include "grafo.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,7 +7,5 @@
 #include <cstring>
 
 using namespace std;
-
-typedef vector< vector<int> > Grafo;
 
 Grafo lerArquivo();

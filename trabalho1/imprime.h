@@ -1,9 +1,8 @@
+#include "grafo.h"
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-typedef vector< vector<int> > Grafo;
-
-void imprimeGrau(Grafo& grafo);
-void imprimeGrafo(Grafo& grafo);
+void imprimeGrau(Grafo&);
+void imprimeGrafo(Grafo&);

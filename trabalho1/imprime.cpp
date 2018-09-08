@@ -10,7 +10,7 @@ void imprimeGrafo(Grafo& grafo) {
 		
 		cout <<"["<< i <<"]";
 		for(int j: grafo[i])
-			cout <<" -> {"<< j <<"}";
+			cout <<" -> "<< j;
 		
 		cout << endl;
 	}
