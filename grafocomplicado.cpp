@@ -1,81 +1,113 @@
 #include <iostream>		// cin e cout
 #include <algorithm>	// max
-#include <list>
-#include <iterator>
-#include <utility>		// pair
+#include <vector>
 
 using namespace std;
 
-class Graph {
-	list<Vertex> vertList;
-	list<Edge> edgeList;
+class Grafo {
+	vector<Vertice> vertices;
 
 public:
-	void addVert(int id) {
-		vertList.push_back(new Vertex(id));
+	Grafo(int qtd_vertices) {
+		for(int i = 1; i <= qtd_vertices; i++)
+			this.addVertice(i);
 	}
 
-	void addEdge(Vertex a, Vertex b, int value) {
-		edgeList.push_back(new Edge(a, b, value));
+	~Grafo() {
+		for (Vertice v: vertices) delete(v);
 	}
 
-	int degree() {
+	void lerArquivo() { }
+	
+
+	void addVertice(int id) {
+		vertices.push_back(new Vertice(id));
+	}
+
+	void addAresta(int id_a, int id_b) {
+		Vertice v1 = find(id_a);
+		Vertice v2 = find(id_b);
+		v1.push_back(v2);
+		v2.push_back(v1);
+	}
+
+	bool existeAresta(int id_a, int id_b) {
+		Vertice v1 = find(id_a);
+		Vertice v2 = find(id_b);
+
+		for (Vertice adj: v1.adj_list)
+			if (adj.id() == v2.id())
+				return true;
+
+		return false;
+	}
+
+	Vertice find(int id) {
+		for(Vertice v: vertices)
+			if(v.id() == id)
+				return v;
+
+		throw invalid_argument; 
+	}
+
+	int grau() {
 		int res = 0;
-		for (Vertex v: vertList)
-			res = max(res, v.degree());
+		for (Vertice v: vertices)
+			res = max(res, v.grau());
 
 		return res;
 	}
 
-	bool isConnected() {
-		for (Vertex v: vertList)
-			if (!v.isConnected())
+	void imprimeGrau() {
+		for(Vertice v: vertices)
+			v.imprimeGrau();
+	}
+
+	void imprime() {
+		cout << "\nGrafo:\n";
+		for(Vertice v: vertices)
+			v.imprime();
+
+		cout << endl;
+	}
+
+	bool conectado() {
+		for (Vertice v: vertices)
+			if (!v.conectado())
 				return false;
 
 		return true;
 	}
-
-	~Graph() {
-		for (Vertex v: vertList) delete(v);
-		for (Edge ed: edgeList)	delete(ed);
-	}
 }
 
-class Vertex {
-	int id;
-	list<Vertex> adj_list;
-
+class Vertice {
 public:
-	Vertex(int new_id) {
+	int id;
+	vector<Vertice> adj_list;
+
+	Vertice(int new_id) {
 		this.id = new_id;
 	}
 
-	void addAdj(Vertex v) {
-		this.adj_list.push_back(v);
+	void push_back(Vertice v) {
+		adj_list.push_back(v);
 	}
 
-	int degree() {
+	int grau() {
 		return adj_list.size;
 	}
 
-	bool isConnected() {
+	void imprimeGrau() {
+		cout << "Vértice "<< id <<" tem grau "<< grau() << endl;
+	}
+
+	void imprime() {
+		cout << "["<< id <<"]";
+		for (Vertice v: adj_list)
+			cout <<" -> "<< v.id();
+	}
+
+	bool conectado() {
 		return (adj_list.size != 0);
-	}
-}
-
-class Edge {
-	int value;
-	pair<Vertex,Vertex> vertices;
-
-public:
-	Edge(Vertex a, Vertex b, int value) {
-		this.value = value;
-		vertices = make_pair(a, b);
-		a.addAdj(b);
-		b.addAdj(a);
-	}
-
-	bool isLoop() {
-		return (vertices.first == vertices.second);
 	}
 }
