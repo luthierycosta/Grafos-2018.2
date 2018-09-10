@@ -2,7 +2,16 @@
 #include "grafo.h"
 #include "coefAglomeracao.h"
 
+
 using namespace std;
+
+/*
+Projeto I de Teoria e Aplicação de Grafos
+Alunos: Luthiery Costa Cavalcante (17/0040631) e Lucas Vinicius Magalhães Pinheiro (17/0061001)
+Professor Díbio
+
+Arquivo principal 
+*/
 
 int main() {
 	
