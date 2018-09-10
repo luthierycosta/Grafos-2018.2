@@ -17,7 +17,11 @@ int main() {
 	
 	Grafo g1 = lerArquivo();
 	imprimeGrafo(g1);
+	cout << "\n";
+
 	imprimeGrau(g1);
+	cout << "\n";
+	
 	coefAglomeracao(g1);
 
 	return 0;

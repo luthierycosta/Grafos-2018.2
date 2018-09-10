@@ -1,5 +1,4 @@
 #include "grafo.h"
-//#include "vertice.h"
 #include <iostream>
 #include <algorithm>	// max
 #include <exception>
@@ -12,13 +11,6 @@ Grafo::Grafo(){}
 Grafo::Grafo(int qtd_vertices) {
 	for(int i = 1; i <= qtd_vertices; i++)
 		addVertice(i);
-}
-
-Grafo::~Grafo() {
-	for (Vertice v: vertices)
-		v.adjascentes.clear();
-	
-	//for (Vertice v: vertices) delete (v);
 }
 
 
@@ -69,7 +61,7 @@ bool Grafo::conectado() {
 }
 
 void Grafo::imprime() {
-	cout << "\nGrafo:\n";
+	cout << "\nGRAFO:\n";
 	for(Vertice v: vertices)
 		v.imprime();
 
@@ -77,6 +69,7 @@ void Grafo::imprime() {
 }
 
 void Grafo::imprimeGraus() {
+	cout << "GRAUS DOS VÉRTICES" << endl; 
 	for(Vertice v: vertices)
 		cout << "Vértice "<< v.id <<" tem grau "<< v.grau() << endl;
 

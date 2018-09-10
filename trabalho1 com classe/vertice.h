@@ -19,5 +19,4 @@ public:
 
 	void imprime();
 
-	//double coefAglomeracao();
 };

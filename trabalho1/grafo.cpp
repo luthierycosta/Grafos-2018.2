@@ -28,11 +28,13 @@ bool existeAresta(Grafo& grafo, int vertice1, int vertice2) {
 
 
 void imprimeGrau(Grafo& grafo) {
+	cout << "GRAUS DOS VÉRTICES" << endl; 
 	for (unsigned int i = 1; i <= grafo.size()-1; i++)
 		cout << "Vértice "<< i <<" tem grau "<< grafo[i].size() << endl;
 }
 
 void imprimeGrafo(Grafo& grafo) {
+	cout << "\nGRAFO:\n";
 	for (unsigned int i = 1; i <= grafo.size()-1; i++) {
 		
 		cout <<"["<< i <<"]";

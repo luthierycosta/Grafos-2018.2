@@ -2,6 +2,7 @@
 
 void coefAglomeracao(Grafo& grafo) {
 
+	cout << "COEFICIENTES DE AGLOMERAÇÃO:" << endl;
 	double soma_coefs = 0;
 
 	for(int i = 1; i < (int)grafo.size(); i++) {						//i percorre cada vértice

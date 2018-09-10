@@ -9,8 +9,6 @@ class Grafo {
 public:
 	Grafo();
 	Grafo(int qtd_vertices);
-	
-	~Grafo();
 
 	void lerArquivo();
 	
