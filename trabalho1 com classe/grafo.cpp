@@ -8,8 +8,8 @@ using namespace std;
 
 Grafo::Grafo(){}
 
-Grafo::Grafo(int qtd_vertices) {
-	for(int i = 1; i <= qtd_vertices; i++)
+Grafo::Grafo(int n) {
+	for(int i = 1; i <= n; i++)
 		addVertice(i);
 }
 
@@ -36,12 +36,8 @@ void Grafo::addAresta(int id_a, int id_b) {
 	}
 }
 
-bool Grafo::existeAresta(int id_a, int id_b) {
-	
-	if ((getVertice(id_a)).existeAresta(id_b))
-		return true;
-	else
-		return false;
+bool Grafo::existeAresta(int id_a, int id_b) {	
+	return  ((getVertice(id_a)).existeAresta(id_b));
 }
 
 int Grafo::grau() {

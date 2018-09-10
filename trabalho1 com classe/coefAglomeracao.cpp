@@ -20,7 +20,7 @@ void Grafo::coefAglomeracao() {
 				
 				for(int i = 0; i < v.grau(); i++) {
 					for(int j = i+1; j < v.grau(); j++) {				// i e j percorrem a lista de adj. do vértice
-						if (existeAresta(v.adjascentes[i], v.adjascentes[j]))
+						if (existeAresta(v.adjacentes[i], v.adjacentes[j]))
 							triangulos++;
 					}
 				}

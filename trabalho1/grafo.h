@@ -1,3 +1,12 @@
+/*
+Montagem do grafo, implementado por vetores de vetores de inteiros,
+onde cada vetor no índice i contém como valores os índices
+dos vértices adjacentes ao vértice i.
+
+@author Lucas Vinicius M. Pinheiro
+@author Luthiery C. Cavalcante
+*/
+
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -5,10 +14,6 @@
 using namespace std;
 
 typedef vector< vector<int> > Grafo;
-
-/*
-Montagem do grafo.
-*/
 
 /*
 @param Endereço para uma estrutura do tipo Grafo
