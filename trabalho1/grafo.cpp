@@ -15,8 +15,8 @@ void addAresta(Grafo& grafo, int vertice1, int vertice2) {
 
 bool existeAresta(Grafo& grafo, int vertice1, int vertice2) {
 	
-	if ((int)grafo.size() >= vertice1 ||
-		(int)grafo.size() >= vertice2  )
+	if ((int)grafo.size() <= vertice1 ||
+		(int)grafo.size() <= vertice2  )
 		return false;
 
 	else for(int adj: grafo[vertice1]) {
