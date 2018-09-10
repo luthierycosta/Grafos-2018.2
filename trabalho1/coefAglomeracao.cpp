@@ -24,6 +24,6 @@ void coefAglomeracao(Grafo& grafo) {
 		soma_coefs += coef_vertice;
 	}
 
-	double coef_grafo = soma_coefs / (int)grafo.size();
+	double coef_grafo = soma_coefs / ((int)grafo.size()-1);
 	cout << "Coeficiente médio de aglomeração do grafo: "<< coef_grafo << endl;
 }
