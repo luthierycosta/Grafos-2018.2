@@ -20,7 +20,7 @@ void coefAglomeracao(Grafo& grafo) {
 		if (n_vertices > 1)
 			coef_vertice = (2*triangulos/(n_vertices*(n_vertices-1)));
 
-		cout << "Vertice "<< i <<" tem coef. aglomeração "<< coef_vertice << endl;
+		cout << "Coeficiente de aglomeração do vértice "<< i <<": "<< coef_vertice << endl;
 		soma_coefs += coef_vertice;
 	}
 

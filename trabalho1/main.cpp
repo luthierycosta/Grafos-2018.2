@@ -1,6 +1,5 @@
 #include "lerArquivo.h"
 #include "grafo.h"
-#include "imprime.h"
 #include "coefAglomeracao.h"
 
 using namespace std;
