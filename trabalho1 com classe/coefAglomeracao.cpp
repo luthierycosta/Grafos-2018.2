@@ -30,7 +30,7 @@ void Grafo::coefAglomeracao() {
 			cout << "Coef. aglomeração do vértice "<< v.id <<": "<< coef_vertice << endl;
 			soma_coefs += coef_vertice;
 		}
-		coef_medio = soma_coefs/(int)vertices.size();
+		coef_medio = soma_coefs/((int)vertices.size()-1);
 	}
 	cout << "Coef. aglomeração médio do grafo: "<< coef_medio << endl;
 }
