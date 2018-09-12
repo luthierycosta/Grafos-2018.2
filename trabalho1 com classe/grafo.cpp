@@ -31,13 +31,13 @@ Vertice& Grafo::getVertice(int id) {
 void Grafo::addAresta(int id_a, int id_b) {
 
 	if (!existeAresta(id_a, id_b)) {
-		(getVertice(id_a)).push_back(id_b);
-		(getVertice(id_b)).push_back(id_a);
+		(getVertice(id_a)).push_back(&getVertice(id_b));
+		(getVertice(id_b)).push_back(&getVertice(id_a));
 	}
 }
 
 bool Grafo::existeAresta(int id_a, int id_b) {	
-	return  ((getVertice(id_a)).existeAresta(id_b));
+	return  ((getVertice(id_a)).existeAresta(&getVertice(id_b)));
 }
 
 int Grafo::grau() {

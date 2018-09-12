@@ -3,33 +3,45 @@
 
 using namespace std;
 
-void Grafo::coefAglomeracao() {
+void Grafo::imprimeCoefAglomeracao() {
 
 	cout << "COEFICIENTES DE AGLOMERAÇÃO:" << endl;
-	double coef_medio;
+
+	for (Vertice v: vertices)
+		cout << "Coeficiente de aglomeração do vértice "<< v.id <<": "<< v.coefAglomeracao() << endl;
+
+	cout << "Coeficiente de aglomeração médio do grafo: "<< this->coefAglomeracao() << endl;
+}
+
+double Grafo::coefAglomeracao() {
+
 	if((int)vertices.size() == 0)
-		coef_medio = 0.0;
+		return 0.0;
 	else {
 		
-		double soma_coefs = 0;
+		double soma_coefs = 0.0;
 		for(Vertice v: vertices) {
-			
-			double coef_vertice = 0, triangulos = 0;
-	
-			if (v.grau() > 1) {
-				
-				for(int i = 0; i < v.grau(); i++) {
-					for(int j = i+1; j < v.grau(); j++) {				// i e j percorrem a lista de adj. do vértice
-						if (existeAresta(v.adjacentes[i], v.adjacentes[j]))
-							triangulos++;
-					}
-				}
-				coef_vertice = (2*triangulos / (v.grau()*(v.grau()-1)));
-			}
-			cout << "Coeficiente de aglomeração do vértice "<< v.id <<": "<< coef_vertice << endl;
-			soma_coefs += coef_vertice;
+			soma_coefs += v.coefAglomeracao();
 		}
-		coef_medio = soma_coefs/((int)vertices.size());
+		return soma_coefs/(int)vertices.size();
 	}
-	cout << "Coeficiente de aglomeração médio do grafo: "<< coef_medio << endl;
+}
+
+double Vertice::coefAglomeracao() {
+
+	int n_adj = this->grau();
+
+	if (n_adj <= 1)
+		return 0.0;
+	else {
+
+		double triangulos = 0;
+		for (int i = 0; i < n_adj; i++) {
+			for (int j = i+1; j < n_adj; j++) {
+				if(adjacentes[i]->existeAresta(adjacentes[j]))
+					triangulos++;
+			}
+		}
+		return (2*triangulos / (n_adj*(n_adj-1)));
+	}
 }

@@ -18,9 +18,9 @@ public:
 
 	/**
 	 * Lista de adjacências deste vértice,
-	 * onde cada valor é o id do vértice correspondente.
+	 * onde cada item é um ponteiro ao vértice correspondente no grafo.
 	 */
-	vector<int> adjacentes;
+	vector<Vertice*> adjacentes;
 
 	/**
 	 * @brief      Cria um vértice com o id especificado.
@@ -30,20 +30,20 @@ public:
 	Vertice(int new_id);
 
 	/**
-	 * @brief      Insere um vértice, ou seja, seu id, na lista de adjacências.
+	 * @brief      Insere um vértice, ou melhor, uma referência para ele, na lista de adjacências.
 	 *
-	 * @param[in]  v    O id do vértice
+	 * @param[in]  v    O ponteiro para o vértice v.
 	 */
-	void push_back(int v);
+	void push_back(Vertice* v);
 
 	/**
 	 * @brief      Checa se existe uma aresta entre esse vértice e um outro especificado
 	 *
-	 * @param[in]  v     O id do vértice desejado
+	 * @param[in]  v     Um ponteiro do vértice desejado
 	 *
 	 * @return     true, caso existe a aresta; false, caso contrário.
 	 */
-	bool existeAresta(int v);
+	bool existeAresta(Vertice* v);
 
 	/**
 	 * @brief      Checa se o vértice é conectado, ou seja,
@@ -60,6 +60,15 @@ public:
 	 * que é o tamanho de sua lista de adjacências.
 	 */
 	int grau();
+
+	/**
+	 * @brief      Calcula o coeficiente de aglomeração deste vértice.
+	 * 
+	 * O coeficiente de aglomeração de um vértice é a razão entre os "triângulos"
+	 * do qual ele faz parte com os todos os triângulos eventualmente possíveis.
+	 *
+	 */
+	double coefAglomeracao();
 
 	/**
 	 * @brief      Imprime na tela os valores do vértice e de sua lista de adjacências.

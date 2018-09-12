@@ -14,7 +14,7 @@ int main() {
 	grafo1.imprimeGraus();
 	cout << "\n";
 
-	grafo1.coefAglomeracao();
+	grafo1.imprimeCoefAglomeracao();
 
 	return 0;
 }

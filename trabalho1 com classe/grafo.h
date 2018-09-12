@@ -102,9 +102,14 @@ public:
 	void imprime();
 
 	/**
-	 * @brief      Mostra na tela os coeficientes de aglomeração
-	 * do grafo e de cada vértice.
+	 * @brief      Calcula o coeficiente de aglomeração médio deste grafo.
+	 * 
+	 * O coeficiente de aglomeração médio de um grafo é a média aritmética
+	 * dos coef. de aglomeração de todos os seus vértices.
+	 *
 	 */
-	void coefAglomeracao();
+	double coefAglomeracao();
+
+	void imprimeCoefAglomeracao();
 };
 

@@ -7,7 +7,7 @@ Vertice::Vertice(int new_id) {
 	this->id = new_id;
 }
 
-void Vertice::push_back(int v) {
+void Vertice::push_back(Vertice* v) {
 	adjacentes.push_back(v);
 }
 
@@ -15,9 +15,9 @@ int Vertice::grau() {
 	return adjacentes.size();
 }
 
-bool Vertice::existeAresta(int v) {
-	for (int adj: adjacentes)
-		if (adj == v)
+bool Vertice::existeAresta(Vertice* v) {
+	for (Vertice* adj: adjacentes)
+		if (adj->id == v->id)
 			return true;
 
 	return false;
@@ -29,8 +29,8 @@ bool Vertice::conectado() {
 
 void Vertice::imprime() {
 	cout << "["<< id <<"]";
-	for (int v: adjacentes)
-		cout <<" -> "<< v;
+	for (Vertice* v: adjacentes)
+		cout <<" -> "<< v->id;
 
 	cout << endl;
 }
