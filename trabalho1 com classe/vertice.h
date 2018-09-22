@@ -2,6 +2,9 @@
  * Arquivo-cabeçalho contendo as declarações da classe Vértice
  * e seus atributos e métodos.
  */
+#ifndef _VERTICE_H_
+#define _VERTICE_H_
+
 #include <vector>
 
 using namespace std;
@@ -76,3 +79,4 @@ public:
 	void imprime();
 
 };
+#endif

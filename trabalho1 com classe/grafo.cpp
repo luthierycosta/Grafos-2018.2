@@ -1,8 +1,8 @@
 #include "grafo.h"
-#include <iostream>
 #include <algorithm>	// max
 #include <exception>
 #include <iterator>
+#include <iostream>
 
 using namespace std;
 
@@ -12,7 +12,6 @@ Grafo::Grafo(int n) {
 	for(int i = 1; i <= n; i++)
 		addVertice(i);
 }
-
 
 void Grafo::addVertice(int id) {
 	vertices.push_back(Vertice(id));
@@ -31,25 +30,33 @@ Vertice& Grafo::getVertice(int id) {
 void Grafo::addAresta(int id_a, int id_b) {
 
 	if (!existeAresta(id_a, id_b)) {
-		(getVertice(id_a)).push_back(&getVertice(id_b));
-		(getVertice(id_b)).push_back(&getVertice(id_a));
+		Vertice* v1 = &getVertice(id_a);
+		Vertice* v2 = &getVertice(id_b);
+		v1->push_back(v2);
+		v2->push_back(v1);
+
+	} else {
+		cout << "Aresta "<< id_a <<" - "<< id_b << "já existe." << endl;
 	}
 }
 
-bool Grafo::existeAresta(int id_a, int id_b) {	
-	return  ((getVertice(id_a)).existeAresta(&getVertice(id_b)));
+bool Grafo::existeAresta(int id_a, int id_b) {
+	Vertice* v1 = &getVertice(id_a);
+	Vertice* v2 = &getVertice(id_b);
+
+	return (v1->existeAresta(v2));
 }
 
 int Grafo::grau() {
 	int res = 0;
-	for (Vertice v: vertices)
+	for (Vertice& v: vertices)
 		res = max(res, v.grau());
 
 	return res;
 }
 
 bool Grafo::conectado() {
-	for (Vertice v: vertices)
+	for (Vertice& v: vertices)
 		if (!v.conectado())
 			return false;
 
@@ -58,16 +65,8 @@ bool Grafo::conectado() {
 
 void Grafo::imprime() {
 	cout << "\nGRAFO:\n";
-	for(Vertice v: vertices)
+	for(Vertice& v: vertices)
 		v.imprime();
 
 	cout << endl;
-}
-
-void Grafo::imprimeGraus() {
-	cout << "GRAUS DOS VÉRTICES" << endl; 
-	for(Vertice v: vertices)
-		cout << "Vértice "<< v.id <<" tem grau "<< v.grau() << endl;
-
-	cout << "Grau do grafo: "<< this->grau() << endl;
 }

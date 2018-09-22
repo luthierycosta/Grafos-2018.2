@@ -1,4 +1,5 @@
 #include "grafo.h"
+#include "vertice.h"
 #include <fstream>
 #include <string>
 #include <cstring>
@@ -6,11 +7,11 @@
 
 using namespace std;
 
-void Grafo::lerArquivo() {
+void Grafo::lerArquivo(string nome_arquivo) {
 		
-	ifstream karate("arquivos/karate.txt");
+	ifstream arquivo(nome_arquivo);
 
-	if (!karate.is_open()) {
+	if (!arquivo.is_open()) {
 		throw "Erro ao ler arquivo";
 	} else {
 
@@ -18,7 +19,7 @@ void Grafo::lerArquivo() {
 		char* linha_convertida = NULL;
 		int id, source, target;
 
-		while (getline(karate, linha_atual)) {				// linha_atual receberá cada linha do arquivo por vez
+		while (getline(arquivo, linha_atual)) {				// linha_atual receberá cada linha do arquivo por vez
 			
 			linha_convertida = (char*) linha_atual.c_str();	// converte pra string de c (char*)
 			
@@ -36,5 +37,5 @@ void Grafo::lerArquivo() {
 			else continue;
 		}
 	}
-	karate.close();
+	arquivo.close();
 }

@@ -5,21 +5,28 @@
  * @author Lucas Vinicius M. Pinheiro
  * @author Luthiery C. Cavalcante
  */
+#ifndef _GRAFO_H_
+#define _GRAFO_H_
+
 #include "vertice.h"
 #include <vector>
+#include <string>
 
 using namespace std;
 
 /**
- * @brief      Classe Grafo, que usa um vetor interno para armazenar seus vértices.
+ * @brief      Classe Grafo, que usa um vetor público para armazenar seus vértices.
+ * 
+ * Não há representação do conjunto de arestas. As ligações entre vértices se dão
+ * apenas pela manipulação de suas lista de adjacências.
  */
 class Grafo {
+public:
 	/**
 	 * Representa o conjunto de vértices do grafo.
 	 */
 	vector<Vertice> vertices;
-
-public:
+	
 	/**
 	 * @brief      Cria um grafo vazio.
 	 */
@@ -34,9 +41,12 @@ public:
 	Grafo(int n);
 
 	/**
-	 * @brief      Extrai vértices e arestas do arquivo "karate.txt" para o grafo.
+	 * @brief      Extrai as informações de vértices e arestas de um arquivo
+	 * e os adiciona no grafo.
+	 *
+	 * @param[in]  nome_arquivo  O caminho do arquivo desejado.
 	 */
-	void lerArquivo();
+	void lerArquivo(string nome_arquivo);
 
 	/**
 	 * @brief      Adiciona um vértice no vetor.
@@ -89,10 +99,7 @@ public:
 	 */
 	int grau();
 
-	/**
-	 * @brief      Mostra na tela os graus de cada vértice e do próprio grafo.
-	 */
-	void imprimeGraus();
+
 
 	/**
 	 * @brief      Imprime o grafo na tela.
@@ -110,6 +117,5 @@ public:
 	 */
 	double coefAglomeracao();
 
-	void imprimeCoefAglomeracao();
 };
-
+#endif

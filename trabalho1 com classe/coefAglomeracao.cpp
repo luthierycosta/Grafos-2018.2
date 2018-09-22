@@ -1,29 +1,18 @@
 #include "grafo.h"
-#include <iostream>
+#include "vertice.h"
 
 using namespace std;
 
-void Grafo::imprimeCoefAglomeracao() {
-
-	cout << "COEFICIENTES DE AGLOMERAÇÃO:" << endl;
-
-	for (Vertice v: vertices)
-		cout << "Coeficiente de aglomeração do vértice "<< v.id <<": "<< v.coefAglomeracao() << endl;
-
-	cout << "Coeficiente de aglomeração médio do grafo: "<< this->coefAglomeracao() << endl;
-}
-
 double Grafo::coefAglomeracao() {
 
-	if((int)vertices.size() == 0)
+	if(vertices.size() == 0)
 		return 0.0;
 	else {
-		
 		double soma_coefs = 0.0;
-		for(Vertice v: vertices) {
+		for(Vertice& v: vertices) {
 			soma_coefs += v.coefAglomeracao();
 		}
-		return soma_coefs/(int)vertices.size();
+		return soma_coefs/vertices.size();
 	}
 }
 
@@ -34,7 +23,6 @@ double Vertice::coefAglomeracao() {
 	if (n_adj <= 1)
 		return 0.0;
 	else {
-
 		double triangulos = 0;
 		for (int i = 0; i < n_adj; i++) {
 			for (int j = i+1; j < n_adj; j++) {
