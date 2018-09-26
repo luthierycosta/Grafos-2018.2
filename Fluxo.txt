@@ -1,0 +1,39 @@
+Calculo1, creditos: 6, dificuldade: 2, pre requisitos: 0
+FTC, creditos: 4, dificuldade: 3, pre requisitos: 0
+ISC, creditos: 4, dificuldade: 2, pre requisitos: 0
+APC, creditos: 6, dificuldade: 1, pre requisitos: 0
+info&soc, creditos: 2, dificuldade: 1, pre requisitos: 0
+
+Calculo2, creditos: 6, dificuldade: 3, pre requisitos: Calculo 1
+IAL, creditos: 4, dificuldade: 2, pre requisitos: 0
+ED, creditos: 4, dificuldade: 1, pre requisitos: APC
+CD, creditos: 6, dificuldade: 2, pre requisitos: 0
+
+Algebra1, creditos: 4, dificuldade: 2, pre requisitos: 0
+CN, creditos: 4, dificuldade: 1, pre requisitos: Calculo 2
+Probabilidade&Estatistica, creditos: 4, dificuldade: 2, pre requisitos: Calculo 1
+OAC, creditos: 4, dificuldade: 3, pre requisitos: CD
+TP1, creditos: 4, dificuldade: 2, pre requisitos: ED
+
+OA, creditos: 4, dificuldade: 3, pre requisitos: ED e Probabilidade&Estatistica
+RedesDeComputadores, creditos: 4, dificuldade: [], pre requisitos: ED e Calculo2 e Probabilidade&Estatistica
+LC1, creditos: 4, dificuldade: 3, pre requisitos: ED
+TP2, creditos: 4, dificuldade: [], pre requisitos: TP1
+Teoria&AplicacaoGrafos, creditos: 4, dificuldade: 2, pre requisitos: ED
+
+LinguagensDeProgramacao, creditos: 4, dificuldade: [], pre requisitos: ED
+BancoDeDados, creditos: 4, dificuldade: [], pre requisitos: OA
+EngenhariaSoftware, creditos: 4, dificuldade: [], pre requisitos: TP1
+IntroInteligenciaArtificial, creditos:4, dificuldade: [], pre requisitos: ED
+ProgramacaoConcorrente, creditos: 4, dificuldade: [], pre requisitos: OAC e TP2
+
+SistemasInformacao, creditos: 4, dificuldade: [], pre requisitos: BancoDeDados
+SoftwareBasico, creditos: 4, dificuldade: [], pre requisitos: OAC e ED
+Automatos&Computabilidade, creditos: 6, dificuldade: 3, pre requisitos: Algebra1
+ComputacaoExperimental, creditos: 4, dificuldade: []~, pre requisitos: Probabilidade&Estatistica e ED
+FundamentosSistemasOperacionais, creditos: 4, dificuldade: [], pre requisitos: ProgramacaoConcorrente
+
+Projeto&AnaliseAlgoritmos, creditos: 4, dificuldade: [], pre requisitos: Calculo1 e ED
+SegurancaComputacional, creditos: 4, dificuldade: [], pre requisitos: RedesDeComputadores
+Compiladores, creditos: 4, dificuldade: [], pre requisitos: LinguagensDeProgramacao e SoftwareBasico e Automatos&Computabilidade
+
