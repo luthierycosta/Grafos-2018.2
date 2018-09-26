@@ -1,39 +1,39 @@
 Calculo1, creditos: 6, dificuldade: 2, pre requisitos: 0
-FTC, creditos: 4, dificuldade: 3, pre requisitos: 0
-ISC, creditos: 4, dificuldade: 2, pre requisitos: 0
-APC, creditos: 6, dificuldade: 1, pre requisitos: 0
-info&soc, creditos: 2, dificuldade: 1, pre requisitos: 0
+FundamentosTeoricosDaComputacao, creditos: 4, dificuldade: 3, pre requisitos: 0
+IntroducaoSistemasComputacionais, creditos: 4, dificuldade: 2, pre requisitos: 0
+Algoritmos&ProgramacaoComputadores, creditos: 6, dificuldade: 1, pre requisitos: 0
+Informatica&Sociedade, creditos: 2, dificuldade: 1, pre requisitos: 0
 
-Calculo2, creditos: 6, dificuldade: 3, pre requisitos: Calculo 1
-IAL, creditos: 4, dificuldade: 2, pre requisitos: 0
-ED, creditos: 4, dificuldade: 1, pre requisitos: APC
-CD, creditos: 6, dificuldade: 2, pre requisitos: 0
+Calculo2, creditos: 6, dificuldade: 3, pre requisitos: Calculo1
+IntroducaoAlgebraLinear, creditos: 4, dificuldade: 2, pre requisitos: 0
+EstruturaDeDados, creditos: 4, dificuldade: 1, pre requisitos: Algoritmos&ProgramacaoComputadores
+CircuitosDigitais, creditos: 6, dificuldade: 2, pre requisitos: 0
 
 Algebra1, creditos: 4, dificuldade: 2, pre requisitos: 0
-CN, creditos: 4, dificuldade: 1, pre requisitos: Calculo 2
+CalculoNumerico, creditos: 4, dificuldade: 1, pre requisitos: Calculo 2
 Probabilidade&Estatistica, creditos: 4, dificuldade: 2, pre requisitos: Calculo 1
-OAC, creditos: 4, dificuldade: 3, pre requisitos: CD
-TP1, creditos: 4, dificuldade: 2, pre requisitos: ED
+Organizacao&ArquiteturaDeComputadores, creditos: 4, dificuldade: 3, pre requisitos: CircuitosDigitais
+TecnicasDeProgramacao1, creditos: 4, dificuldade: 2, pre requisitos: EstruturaDeDados
 
-OA, creditos: 4, dificuldade: 3, pre requisitos: ED e Probabilidade&Estatistica
-RedesDeComputadores, creditos: 4, dificuldade: [], pre requisitos: ED e Calculo2 e Probabilidade&Estatistica
-LC1, creditos: 4, dificuldade: 3, pre requisitos: ED
-TP2, creditos: 4, dificuldade: [], pre requisitos: TP1
-Teoria&AplicacaoGrafos, creditos: 4, dificuldade: 2, pre requisitos: ED
+OrganizacaoDeArquivos, creditos: 4, dificuldade: 3, pre requisitos: EstruturaDeDados e Probabilidade&Estatistica
+RedesDeComputadores, creditos: 4, dificuldade: 2, pre requisitos: EstruturaDeDados e Calculo2 e Probabilidade&Estatistica
+LogicaComputacional1, creditos: 4, dificuldade: 3, pre requisitos: EstruturaDeDados
+TecnicasDeProgramacao2, creditos: 4, dificuldade: 2, pre requisitos: TecnicasDeProgramacao1
+Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2, pre requisitos: EstruturaDeDados
 
-LinguagensDeProgramacao, creditos: 4, dificuldade: [], pre requisitos: ED
-BancoDeDados, creditos: 4, dificuldade: [], pre requisitos: OA
-EngenhariaSoftware, creditos: 4, dificuldade: [], pre requisitos: TP1
-IntroInteligenciaArtificial, creditos:4, dificuldade: [], pre requisitos: ED
-ProgramacaoConcorrente, creditos: 4, dificuldade: [], pre requisitos: OAC e TP2
+LinguagensDeProgramacao, creditos: 4, dificuldade: 1, pre requisitos: EstruturaDeDados
+BancoDeDados, creditos: 4, dificuldade: 2, pre requisitos: OA
+EngenhariaDeSoftware, creditos: 4, dificuldade: 3, pre requisitos: TecnicasDeProgramacao1
+IntroducaoInteligenciaArtificial, creditos:4, dificuldade: 3, pre requisitos: EstruturaDeDados
+ProgramacaoConcorrente, creditos: 4, dificuldade: 3, pre requisitos: Organizacao&ArquiteturaDeComputadores e TecnicasDeProgramacao2
 
-SistemasInformacao, creditos: 4, dificuldade: [], pre requisitos: BancoDeDados
-SoftwareBasico, creditos: 4, dificuldade: [], pre requisitos: OAC e ED
+SistemasDeInformacao, creditos: 4, dificuldade: 2, pre requisitos: BancoDeDados
+SoftwareBasico, creditos: 4, dificuldade: 2, pre requisitos: Organizacao&ArquiteturaDeComputadores e EstruturaDeDados
 Automatos&Computabilidade, creditos: 6, dificuldade: 3, pre requisitos: Algebra1
-ComputacaoExperimental, creditos: 4, dificuldade: []~, pre requisitos: Probabilidade&Estatistica e ED
-FundamentosSistemasOperacionais, creditos: 4, dificuldade: [], pre requisitos: ProgramacaoConcorrente
+ComputacaoExperimental, creditos: 4, dificuldade: 1, pre requisitos: Probabilidade&Estatistica e EstruturaDeDados
+FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3, pre requisitos: ProgramacaoConcorrente
 
-Projeto&AnaliseAlgoritmos, creditos: 4, dificuldade: [], pre requisitos: Calculo1 e ED
-SegurancaComputacional, creditos: 4, dificuldade: [], pre requisitos: RedesDeComputadores
-Compiladores, creditos: 4, dificuldade: [], pre requisitos: LinguagensDeProgramacao e SoftwareBasico e Automatos&Computabilidade
+Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2, pre requisitos: Calculo1 e EstruturaDeDados
+SegurancaComputacional, creditos: 4, dificuldade: 2, pre requisitos: RedesDeComputadores
+Compiladores, creditos: 4, dificuldade: 3, pre requisitos: LinguagensDeProgramacao e SoftwareBasico e Automatos&Computabilidade
 
