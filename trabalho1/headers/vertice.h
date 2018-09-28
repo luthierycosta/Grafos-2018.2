@@ -29,7 +29,7 @@ public:
 	/**
 	 * @brief      Cria um vértice com o id especificado.
 	 *
-	 * @param[in]  new_id	O id
+	 * @param[in]  new_id	O id.
 	 */
 	Vertice(int new_id);
 
@@ -39,6 +39,14 @@ public:
 	 * @param[in]  v    O ponteiro para o vértice v.
 	 */
 	void push_back(Vertice* v);
+
+	/**
+	 * @brief      Remove a aresta entre este vértice e o vértice v, isto é,
+	 * remove v da sua lista de adjacências.
+	 *
+	 * @param      v     O ponteiro para o vértice v.
+	 */
+	void removeAresta(Vertice* v);
 
 	/**
 	 * @brief      Checa se existe uma aresta entre esse vértice e um outro especificado

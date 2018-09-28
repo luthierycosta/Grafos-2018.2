@@ -1,5 +1,6 @@
 #include "../headers/vertice.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,6 +10,10 @@ Vertice::Vertice(int new_id) {
 
 void Vertice::push_back(Vertice* v) {
 	adjacentes.push_back(v);
+}
+
+void Vertice::removeAresta(Vertice* v) {
+	adjacentes.erase(remove(adjacentes.begin(), adjacentes.end(), v), adjacentes.end());
 }
 
 bool Vertice::existeAresta(Vertice* v) {

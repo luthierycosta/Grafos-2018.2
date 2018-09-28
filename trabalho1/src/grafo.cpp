@@ -48,9 +48,20 @@ void Grafo::addAresta(int id_a, int id_b) {
 		v1->push_back(v2);
 		v2->push_back(v1);
 
-	} else {
-		cout << "Aresta "<< id_a <<" - "<< id_b << "já existe." << endl;
-	}
+	} else
+		cout << "Aresta ("<< id_a <<", "<< id_b << ") já existe." << endl;
+}
+
+void Grafo::removeAresta(int id_a, int id_b) {
+
+	if (existeAresta(id_a, id_b)) {
+		Vertice* v1 = &getVertice(id_a);
+		Vertice* v2 = &getVertice(id_b);
+		v1->removeAresta(v2);
+		v2->removeAresta(v1);
+	
+	} else
+		cout << "Aresta ("<< id_a <<", "<< id_b << ") não existe." << endl;
 }
 
 bool Grafo::existeAresta(int id_a, int id_b) {

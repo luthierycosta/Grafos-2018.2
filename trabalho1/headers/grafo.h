@@ -16,9 +16,9 @@
 using namespace std;
 
 /**
- * @brief      Classe Grafo, que usa um vetor público para armazenar seus vértices.
+ * @brief      Grafo não direcionado, sem pesos nas arestas, cujos vértices representam números inteiros.
  * 
- * Os vértices do grafo representam números inteiros.
+ * Usa um vetor público para armazenar seus vértices.
  * 
  * Não há representação do conjunto de arestas. As ligações entre vértices se dão
  * apenas pela manipulação de suas lista de adjacências.
@@ -69,12 +69,24 @@ public:
 	Vertice& getVertice(int id);
 
 	/**
-	 * @brief      Adiciona uma aresta entre os vértices a e b, se ela já não existir.
+	 * @brief      Adiciona uma aresta entre os vértices a e b, se ela ainda não existe.
+	 * 
+	 * Como se trata de um grafo não direcionado, adiciona uma aresta (a, b) e outra (b, a).
 	 *
 	 * @param[in]  id_a  O id do vértice a.
 	 * @param[in]  id_b  O id do vértice b.
 	 */
 	void addAresta(int id_a, int id_b);
+
+	/**
+	 * @brief      Remove a aresta entre o vértice a e o vértice b.
+	 * 
+	 * Como se trata de um grafo não direcionado, remove (a, b) e depois (b, a).
+	 *
+	 * @param[in]  id_a  O id do vértice a.
+	 * @param[in]  id_b  O id do vértice b.
+	 */
+	void removeAresta(int id_a, int id_b);
 
 	/**
 	 * @brief      Checa se existe uma aresta entre dois vértices a e b.
@@ -84,7 +96,6 @@ public:
 	 *
 	 * @return     true, caso exista uma aresta; false, caso contrário.
 	 */
-
 	bool existeAresta(int id_a, int id_b);
 
 
