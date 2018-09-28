@@ -1,5 +1,5 @@
 #include "../headers/grafo.h"
-#include <algorithm>	// max
+#include <algorithm>
 #include <exception>
 #include <iterator>
 #include <iostream>
@@ -14,7 +14,20 @@ Grafo::Grafo(int n) {
 }
 
 void Grafo::addVertice(int id) {
-	vertices.push_back(Vertice(id));
+	if (!existeVertice(id))
+		vertices.push_back(Vertice(id));
+	else
+		cout << "Vértice ["<< id <<"] já existe no grafo.";
+}
+
+bool Grafo::existeVertice(int id) {
+
+	vector<Vertice>::iterator it;
+	for (it = vertices.begin(); it != vertices.end(); it++)
+		if((*it).id == id)
+			return true;
+
+	return false;
 }
 
 Vertice& Grafo::getVertice(int id) {
@@ -76,10 +89,11 @@ double Grafo::coefAglomeracao() {
 	}
 }
 
-void Grafo::imprime() {
-	cout << "\nGRAFO:\n";
-	for(Vertice& v: vertices)
-		v.imprime();
+ostream& operator <<(ostream& os, const Grafo& grafo) {
+	os << "\nGRAFO:\n";
+	for(const Vertice v: grafo.vertices)
+		os << v;
 
-	cout << endl;
+	os << endl;
+	return os;
 }

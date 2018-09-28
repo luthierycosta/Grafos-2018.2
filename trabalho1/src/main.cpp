@@ -11,8 +11,7 @@ int main() {
 	Grafo grafo1;
 
 	lerArquivo(grafo1, "arquivos/karate.txt");
-	grafo1.imprime();
-	cout << "\n";
+	cout << grafo1 << endl;
 
 	imprimeGraus(grafo1);
 	cout << "\n";

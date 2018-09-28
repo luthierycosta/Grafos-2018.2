@@ -6,16 +6,17 @@
 #define _VERTICE_H_
 
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 /**
- * @brief      Classe Vértice, que representa um vértice em um grafo.
+ * @brief      Classe Vértice, cuja informação representa um número inteiro em um grafo.
  */
 class Vertice {
 public:
 	/**
-	 * O 'nome' ou 'valor' do vértice.
+	 * O 'nome' ou 'valor' do vértice - um número inteiro.
 	 */
 	int id;
 
@@ -74,9 +75,15 @@ public:
 	double coefAglomeracao();
 
 	/**
-	 * @brief      Imprime na tela os valores do vértice e de sua lista de adjacências.
+	 * @brief      Método externo que permite imprimir o vértice e sua lista de adjacências
+	 * na tela usando std::cout.
+	 * 
+	 * Declarado como "friend", um método externo tem acesso os dados privados da classe/objeto
+	 * mesmo sem estar contido nela.
+	 *
+	 * @param[in]  v     O vértice de inteiro a ser impresso.
 	 */
-	void imprime();
+	friend ostream& operator <<(ostream& os, const Vertice& v);
 
 };
 #endif

@@ -11,7 +11,7 @@ using namespace std;
 
 /**
  * @brief      Extrai as informações de vértices e arestas de um arquivo
- * e os adiciona no grafo.
+ * e os adiciona num grafo representando números inteiros.
  *
  * @param      grafo         O grafo especificado.
  * @param[in]  nome_arquivo  O caminho do arquivo a ser lido.

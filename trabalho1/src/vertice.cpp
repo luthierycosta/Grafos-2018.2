@@ -45,10 +45,11 @@ double Vertice::coefAglomeracao() {
 	}
 }
 
-void Vertice::imprime() {
-	cout << "["<< id <<"]";
-	for (Vertice* v: adjacentes)
-		cout <<" -> "<< v->id;
+ostream& operator <<(ostream& os, const Vertice& vert) {
+	os << "["<< vert.id <<"]";
+	for (Vertice* v: vert.adjacentes)
+		os <<" -> "<< v->id;
 
-	cout << endl;
+	os << endl;
+	return os;
 }
