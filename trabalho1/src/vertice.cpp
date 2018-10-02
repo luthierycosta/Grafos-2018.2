@@ -51,9 +51,9 @@ double Vertice::coefAglomeracao() {
 }
 
 ostream& operator <<(ostream& os, const Vertice& vert) {
-	os << "["<< vert.id <<"]";
+	os << "["<< vert.id <<"] - ";
 	for (Vertice* v: vert.adjacentes)
-		os <<" -> "<< v->id;
+		os << v->id << "; ";
 
 	os << endl;
 	return os;
