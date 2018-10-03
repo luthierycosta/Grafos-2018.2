@@ -1,41 +1,37 @@
-Calculo1, creditos: 6, dificuldade: 2
-FundamentosTeoricosDaComputacao, creditos: 4, dificuldade: 3
-IntroducaoSistemasComputacionais, creditos: 4, dificuldade: 2
-Algoritmos&ProgramacaoComputadores, creditos: 6, dificuldade: 1
-Informatica&Sociedade, creditos: 2, dificuldade: 1
+retirado da página do fluxo de Ciência da Computação no MatriculaWeb
 
-Calculo2, creditos: 6, dificuldade: 3
-IntroducaoAlgebraLinear, creditos: 4, dificuldade: 2
-EstruturaDeDados, creditos: 4, dificuldade: 1
-CircuitosDigitais, creditos: 6, dificuldade: 2
-
-Algebra1, creditos: 4, dificuldade: 2
-CalculoNumerico, creditos: 4, dificuldade: 1
-Probabilidade&Estatistica, creditos: 4, dificuldade: 2
-Organizacao&ArquiteturaDeComputadores, creditos: 4, dificuldade: 3
-TecnicasDeProgramacao1, creditos: 4, dificuldade: 2
-
-OrganizacaoDeArquivos, creditos: 4, dificuldade: 3
-RedesDeComputadores, creditos: 4, dificuldade: 2
-LogicaComputacional1, creditos: 4, dificuldade: 3
-TecnicasDeProgramacao2, creditos: 4, dificuldade: 2
-Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2
-
-LinguagensDeProgramacao, creditos: 4, dificuldade: 1
-BancoDeDados, creditos: 4, dificuldade: 2
-EngenhariaDeSoftware, creditos: 4, dificuldade: 3
-IntroducaoInteligenciaArtificial, creditos:4, dificuldade: 3
-ProgramacaoConcorrente, creditos: 4, dificuldade: 3
-
-SistemasDeInformacao, creditos: 4, dificuldade: 2
-SoftwareBasico, creditos: 4, dificuldade: 2
-Automatos&Computabilidade, creditos: 6, dificuldade: 3
-ComputacaoExperimental, creditos: 4, dificuldade: 1
-FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3
-
-Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2
-SegurancaComputacional, creditos: 4, dificuldade: 2
-Compiladores, creditos: 4, dificuldade: 3
+id Calculo1, creditos: 6, dificuldade: 2
+id FundamentosTeoricosDaComputacao, creditos: 4, dificuldade: 3
+id IntroducaoSistemasComputacionais, creditos: 4, dificuldade: 2
+id Algoritmos&ProgramacaoComputadores, creditos: 6, dificuldade: 1
+id Informatica&Sociedade, creditos: 2, dificuldade: 1
+id Calculo2, creditos: 6, dificuldade: 3
+id IntroducaoAlgebraLinear, creditos: 4, dificuldade: 2
+id EstruturasDeDados, creditos: 4, dificuldade: 1
+id CircuitosDigitais, creditos: 6, dificuldade: 2
+id Algebra1, creditos: 4, dificuldade: 2
+id CalculoNumerico, creditos: 4, dificuldade: 1
+id Probabilidade&Estatistica, creditos: 4, dificuldade: 2
+id Organizacao&ArquiteturaDeComputadores, creditos: 4, dificuldade: 3
+id TecnicasDeProgramacao1, creditos: 4, dificuldade: 2
+id OrganizacaoDeArquivos, creditos: 4, dificuldade: 3
+id RedesDeComputadores, creditos: 4, dificuldade: 2
+id LogicaComputacional1, creditos: 4, dificuldade: 3
+id TecnicasDeProgramacao2, creditos: 4, dificuldade: 2
+id Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2
+id LinguagensDeProgramacao, creditos: 4, dificuldade: 1
+id BancosDeDados, creditos: 4, dificuldade: 2
+id EngenhariaDeSoftware, creditos: 4, dificuldade: 3
+id IntroducaoInteligenciaArtificial, creditos: 4, dificuldade: 3
+id ProgramacaoConcorrente, creditos: 4, dificuldade: 3
+id SistemasDeInformacao, creditos: 4, dificuldade: 2
+id SoftwareBasico, creditos: 4, dificuldade: 2
+id Automatos&Computabilidade, creditos: 6, dificuldade: 3
+id ComputacaoExperimental, creditos: 4, dificuldade: 1
+id FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3
+id Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2
+id SegurancaComputacional, creditos: 4, dificuldade: 2
+id Compiladores, creditos: 4, dificuldade: 3
 
 Arestas:
 edge
@@ -46,7 +42,7 @@ edge
 edge
 {
 	source: Algoritmos&ProgramacaoComputadores
-	receive: EstruturaDeDados
+	receive: EstruturasDeDados
 }
 edge
 {
@@ -65,12 +61,12 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: TecnicasDeProgramacao1
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: OrganizacaoDeArquivos
 }
 edge
@@ -80,7 +76,7 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: RedesDeComputadores
 }
 edge
@@ -95,7 +91,7 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: LogicaComputacional1
 }
 edge
@@ -105,18 +101,18 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: Teoria&AplicacaoDeGrafos
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: LinguagensDeProgramacao
 }
 edge
 {
 	source: OrganizacaoDeArquivos
-	receive: BancoDeDados
+	receive: BancosDeDados
 }
 edge
 {
@@ -125,7 +121,7 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: IntroducaoInteligenciaArtificial
 }
 edge
@@ -140,12 +136,12 @@ edge
 }
 edge
 {
-	source: BancoDeDados
+	source: BancosDeDados
 	receive: SistemasDeInformacao
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: SoftwareBasico
 }
 edge
@@ -160,7 +156,7 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: ComputacaoExperimental
 }
 edge
@@ -175,7 +171,7 @@ edge
 }
 edge
 {
-	source: EstruturaDeDados
+	source: EstruturasDeDados
 	receive: Projeto&AnaliseDeAlgoritmos
 }
 edge
