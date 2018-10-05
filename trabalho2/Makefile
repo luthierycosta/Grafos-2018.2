@@ -13,8 +13,8 @@ HEADERS 	= $(wildcard $(HEADERS_DIR)/*.h)
 all: Grafos1 clean
 
 # executavel
-Grafos1: $(HEADERS) grafo vertice disciplina
-	g++ $(FLAGS) -o Grafos2.exe $(SRC_DIR)/main.cpp grafo.o vertice.o disciplina.o
+Grafos1: $(HEADERS) grafo vertice disciplina ordenacaoTopologica
+	g++ $(FLAGS) -o Grafos2.exe $(SRC_DIR)/main.cpp grafo.o vertice.o disciplina.o ordenacaoTopologica.o
 
 # .o's
 grafo: $(HEADERS) $(SRC_DIR)/grafo.cpp
@@ -25,6 +25,9 @@ vertice: $(HEADERS) $(SRC_DIR)/vertice.cpp
 
 disciplina: $(HEADERS) $(SRC_DIR)/disciplina.cpp
 	g++ $(FLAGS) -c $(SRC_DIR)/disciplina.cpp
+
+ordenacaoTopologica: $(HEADERS) $(SRC_DIR)/ordenacaoTopologica.cpp
+	g++ $(FLAGS) -c $(SRC_DIR)/ordenacaoTopologica.cpp
 
 #lerArquivo: $(HEADERS) $(SRC_DIR)/lerArquivo.cpp
 #	g++ $(FLAGS) -c $(SRC_DIR)/lerArquivo.cpp
