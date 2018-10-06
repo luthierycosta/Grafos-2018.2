@@ -1,201 +1,200 @@
 retirado da página do fluxo de Ciência da Computação no MatriculaWeb
 
-id Calculo1, creditos: 6, dificuldade: 2
-id FundamentosTeoricosDaComputacao, creditos: 4, dificuldade: 3
-id IntroducaoSistemasComputacionais, creditos: 4, dificuldade: 2
-id Algoritmos&ProgramacaoComputadores, creditos: 6, dificuldade: 1
-id Informatica&Sociedade, creditos: 2, dificuldade: 1
-id Calculo2, creditos: 6, dificuldade: 3
-id IntroducaoAlgebraLinear, creditos: 4, dificuldade: 2
-id EstruturasDeDados, creditos: 4, dificuldade: 1
-id CircuitosDigitais, creditos: 6, dificuldade: 2
-id Algebra1, creditos: 4, dificuldade: 2
-id CalculoNumerico, creditos: 4, dificuldade: 1
-id Probabilidade&Estatistica, creditos: 4, dificuldade: 2
-id Organizacao&ArquiteturaDeComputadores, creditos: 4, dificuldade: 3
-id TecnicasDeProgramacao1, creditos: 4, dificuldade: 2
-id OrganizacaoDeArquivos, creditos: 4, dificuldade: 3
-id RedesDeComputadores, creditos: 4, dificuldade: 2
-id LogicaComputacional1, creditos: 4, dificuldade: 3
-id TecnicasDeProgramacao2, creditos: 4, dificuldade: 2
-id Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2
-id LinguagensDeProgramacao, creditos: 4, dificuldade: 1
-id BancosDeDados, creditos: 4, dificuldade: 2
-id EngenhariaDeSoftware, creditos: 4, dificuldade: 3
-id IntroducaoInteligenciaArtificial, creditos: 4, dificuldade: 3
-id ProgramacaoConcorrente, creditos: 4, dificuldade: 3
-id SistemasDeInformacao, creditos: 4, dificuldade: 2
-id SoftwareBasico, creditos: 4, dificuldade: 2
-id Automatos&Computabilidade, creditos: 6, dificuldade: 3
-id ComputacaoExperimental, creditos: 4, dificuldade: 1
-id FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3
-id Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2
-id SegurancaComputacional, creditos: 4, dificuldade: 2
-id Compiladores, creditos: 4, dificuldade: 3
+id 1 Calculo1, creditos: 6, dificuldade: 2
+id 2 FundamentosTeoricosDaComputacao, creditos: 4, dificuldade: 3
+id 3 IntroducaoSistemasComputacionais, creditos: 4, dificuldade: 2
+id 4 Algoritmos&ProgramacaoComputadores, creditos: 6, dificuldade: 1
+id 5 Informatica&Sociedade, creditos: 2, dificuldade: 1
+id 6 Calculo2, creditos: 6, dificuldade: 3
+id 7 IntroducaoAlgebraLinear, creditos: 4, dificuldade: 2
+id 8 EstruturasDeDados, creditos: 4, dificuldade: 1
+id 9 CircuitosDigitais, creditos: 6, dificuldade: 2
+id 10 Algebra1, creditos: 4, dificuldade: 2
+id 11 CalculoNumerico, creditos: 4, dificuldade: 1
+id 12 Probabilidade&Estatistica, creditos: 4, dificuldade: 2
+id 13 Organizacao&ArquiteturaDeComputadores, creditos: 4, dificuldade: 3
+id 14 TecnicasDeProgramacao1, creditos: 4, dificuldade: 2
+id 15 OrganizacaoDeArquivos, creditos: 4, dificuldade: 3
+id 16 RedesDeComputadores, creditos: 4, dificuldade: 2
+id 17 LogicaComputacional1, creditos: 4, dificuldade: 3
+id 18 TecnicasDeProgramacao2, creditos: 4, dificuldade: 2
+id 19 Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2
+id 20 LinguagensDeProgramacao, creditos: 4, dificuldade: 1
+id 21 BancosDeDados, creditos: 4, dificuldade: 2
+id 22 EngenhariaDeSoftware, creditos: 4, dificuldade: 3
+id 23 IntroducaoInteligenciaArtificial, creditos: 4, dificuldade: 3
+id 24 ProgramacaoConcorrente, creditos: 4, dificuldade: 3
+id 25 SistemasDeInformacao, creditos: 4, dificuldade: 2
+id 26 SoftwareBasico, creditos: 4, dificuldade: 2
+id 27 Automatos&Computabilidade, creditos: 6, dificuldade: 3
+id 28 ComputacaoExperimental, creditos: 4, dificuldade: 1
+id 29 FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3
+id 30 Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2
+id 31 SegurancaComputacional, creditos: 4, dificuldade: 2
+id 32 Compiladores, creditos: 4, dificuldade: 3
 
-Arestas:
 edge
 {
-	source: Calculo1
-	receive: Calculo2
+source: Calculo1 (1)
+receive: Calculo2 (6)
 }
 edge
 {
-	source: Algoritmos&ProgramacaoComputadores
-	receive: EstruturasDeDados
+source: Algoritmos&ProgramacaoComputadores (4)
+receive: EstruturasDeDados (8)
 }
 edge
 {
-	source: Calculo2
-	receive: CalculoNumerico
+source: Calculo2 (6)
+receive: CalculoNumerico (11)
 }
 edge
 {
-	source: Calculo1
-	receive: Probabilidade&Estatistica
+source: Calculo1 (1)
+receive: Probabilidade&Estatistica (12)
 }
 edge
 {
-	source: CircuitosDigitais
-	receive: Organizacao&ArquiteturaDeComputadores
+source: CircuitosDigitais (9)
+receive: Organizacao&ArquiteturaDeComputadores (13)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: TecnicasDeProgramacao1
+source: EstruturasDeDados (8)
+receive: TecnicasDeProgramacao1 (14)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: OrganizacaoDeArquivos
+source: EstruturasDeDados (8)
+receive: OrganizacaoDeArquivos (15)
 }
 edge
 {
-	source: Probabilidade&Estatistica
-	receive: OrganizacaoDeArquivos
+source: Probabilidade&Estatistica (12)
+receive: OrganizacaoDeArquivos (15)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: RedesDeComputadores
+source: EstruturasDeDados (8)
+receive: RedesDeComputadores (16)
 }
 edge
 {
-	source: Calculo2
-	receive: RedesDeComputadores
+source: Calculo2 (6)
+receive: RedesDeComputadores (16)
 }
 edge
 {
-	source: Probabilidade&Estatistica
-	receive: RedesDeComputadores
+source: Probabilidade&Estatistica (12)
+receive: RedesDeComputadores (16)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: LogicaComputacional1
+source: EstruturasDeDados (8)
+receive: LogicaComputacional1 (17)
 }
 edge
 {
-	source: TecnicasDeProgramacao1
-	receive: TecnicasDeProgramacao2
+source: TecnicasDeProgramacao1 (14)
+receive: TecnicasDeProgramacao2 (18)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: Teoria&AplicacaoDeGrafos
+source: EstruturasDeDados (8)
+receive: Teoria&AplicacaoDeGrafos (19)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: LinguagensDeProgramacao
+source: EstruturasDeDados (8)
+receive: LinguagensDeProgramacao (20)
 }
 edge
 {
-	source: OrganizacaoDeArquivos
-	receive: BancosDeDados
+source: OrganizacaoDeArquivos (15)
+receive: BancosDeDados (21)
 }
 edge
 {
-	source: TecnicasDeProgramacao1
-	receive: EngenhariaDeSoftware
+source: TecnicasDeProgramacao1 (14)
+receive: EngenhariaDeSoftware (22)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: IntroducaoInteligenciaArtificial
+source: EstruturasDeDados (8)
+receive: IntroducaoInteligenciaArtificial (23)
 }
 edge
 {
-	source: TecnicasDeProgramacao2
-	receive: ProgramacaoConcorrente
+source: TecnicasDeProgramacao2 (18)
+receive: ProgramacaoConcorrente (24)
 }
 edge
 {
-	source: Organizacao&ArquiteturaDeComputadores
-	receive: ProgramacaoConcorrente
+source: Organizacao&ArquiteturaDeComputadores (13)
+receive: ProgramacaoConcorrente (24)
 }
 edge
 {
-	source: BancosDeDados
-	receive: SistemasDeInformacao
+source: BancosDeDados (21)
+receive: SistemasDeInformacao (25)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: SoftwareBasico
+source: EstruturasDeDados (8)
+receive: SoftwareBasico (26)
 }
 edge
 {
-	source: Organizacao&ArquiteturaDeComputadores
-	receive: SoftwareBasico
+source: Organizacao&ArquiteturaDeComputadores (13)
+receive: SoftwareBasico (26)
 }
 edge
 {
-	source: Algebra1
-	receive: Automatos&Computabilidade
+source: Algebra1 (10)
+receive: Automatos&Computabilidade (27)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: ComputacaoExperimental
+source: EstruturasDeDados (8)
+receive: ComputacaoExperimental
 }
 edge
 {
-	source: Probabilidade&Estatistica
-	receive: ComputacaoExperimental
+source: Probabilidade&Estatistica (12)
+receive: ComputacaoExperimental (28)
 }
 edge
 {
-	source: ProgramacaoConcorrente
-	receive: FundamentosSistemasOperacionais
+source: ProgramacaoConcorrente (24)
+receive: FundamentosSistemasOperacionais (29)
 }
 edge
 {
-	source: EstruturasDeDados
-	receive: Projeto&AnaliseDeAlgoritmos
+source: EstruturasDeDados (8)
+receive: Projeto&AnaliseDeAlgoritmos (30)
 }
 edge
 {
-	source: Calculo1
-	receive: Projeto&AnaliseDeAlgoritmos
+source: Calculo1 (1)
+receive: Projeto&AnaliseDeAlgoritmos (30)
+} 
+edge
+{
+source: RedesDeComputadores (16)
+receive: SegurancaComputacional (31)
 }
 edge
 {
-	source: RedesDeComputadores
-	receive: SegurancaComputacional
+source: Automatos&Computabilidade (27)
+receive: Compiladores (32)
 }
 edge
 {
-	source: Automatos&Computabilidade
-	receive: Compiladores
+source: SoftwareBasico (26)
+receive: Compiladores (32)
 }
 edge
 {
-	source: SoftwareBasico
-	receive: Compiladores
-}
-edge
-{
-	source: LinguagensDeProgramacao
-	receive: Compiladores
+source: LinguagensDeProgramacao (20)
+receive: Compiladores (32)
 }
