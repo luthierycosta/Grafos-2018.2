@@ -1,9 +1,8 @@
 #ifndef _READFILE_
 #define _READFILE_
 
-#include <fstream>
+#include "grafo.h"
 #include <string>
-#include <iostream>
 
 using namespace std;
 

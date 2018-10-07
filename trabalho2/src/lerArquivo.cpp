@@ -2,47 +2,46 @@
 #include "../headers/grafo.h"
 #include "../headers/vertice.h"
 #include "../headers/lerArquivo.h"
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <cstring>
 #include <cstdio>
 
+#define MAXLENGTH 150
+
 using namespace std;
 
 void lerArquivo(Grafo& grafo, string nome_arquivo){
 	
-	vector<char*> fluxo(35);
-	
-	ifstream arquivo(nome_arquivo);
-	if(!arquivo.is_open()){
-		throw ("Erro ao ler arquivo");	
-	}else{	
-		string linha_atual;
-		char* linha_convertida;
-		int id=0;
+	FILE* arquivo = fopen((char*)nome_arquivo.c_str(), "r");
+
+	if(!arquivo) {
+		printf("Erro ao ler arquivo\n");
+		exit(-1);	
+	} else{
 		
-		while(getline(arquivo, linha_atual)){
-			char* Fdisciplina;
-			int Fcreditos, Fdificuldade, Fsource, Freceive;
-			
-			linha_convertida = (char*) linha_atual.c_str();
-			
-			if(strstr(linha_convertida, "id ")){
-				id++;
-				sscanf(linha_convertida, "id %*d %[^,], %*s %d, %*s %d", Fdisciplina, &Fcreditos, &Fdificuldade);
-				printf("id: %d|disciplina: %s| creditos: %d| dificuldade: %d\n", id, Fdisciplina, Fcreditos, Fdificuldade);
-				//grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade);
+		char linha[MAXLENGTH], Fdisciplina[MAXLENGTH], Fsource[MAXLENGTH], Freceive[MAXLENGTH];
+		int Fcreditos, Fdificuldade;
+		//int id=0;
+		
+		while(fgets(linha, MAXLENGTH, arquivo)){
+					
+			if(strstr(linha, "id ")){
+				//id++;
+				sscanf(linha, "id %*d %[^,], %*s %d, %*s %d", Fdisciplina, &Fcreditos, &Fdificuldade);
+				//printf("id: %d|disciplina: %s| creditos: %d| dificuldade: %d\n", id, Fdisciplina, Fcreditos, Fdificuldade);
+				grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade);
 			}
-			else if(strstr(linha_convertida, "source: ")){
-				sscanf(linha_convertida, "%*s %*s (%d)", &Fsource);
+			else if(strstr(linha, "source: ")){
+				sscanf(linha, "%*s %s (%*d)", Fsource);
 			}
-			else if(strstr(linha_convertida, "receive:")){
-				sscanf(linha_convertida, "%*s %*s (%d)", &Freceive);
-				printf("%d é pre requisito de %d\n", Fsource, Freceive);
+			else if(strstr(linha, "receive:")){
+				sscanf(linha, "%*s %s (%*d)", Freceive);
+				//printf("%s é pre requisito de %s\n", Fsource, Freceive);
+				grafo.addAresta(Fsource, Freceive);
 			}
 			else continue;
 		}
 	}
-	arquivo.close();
+	fclose(arquivo);
 }

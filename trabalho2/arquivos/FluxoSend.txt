@@ -17,17 +17,17 @@ id 14 TecnicasDeProgramacao1, creditos: 4, dificuldade: 2
 id 15 OrganizacaoDeArquivos, creditos: 4, dificuldade: 3
 id 16 RedesDeComputadores, creditos: 4, dificuldade: 2
 id 17 LogicaComputacional1, creditos: 4, dificuldade: 3
-id 18 TecnicasDeProgramacao2, creditos: 4, dificuldade: 2
+id 18 TecnicasDeProgramacao2, creditos: 4, dificuldade: 1
 id 19 Teoria&AplicacaoDeGrafos, creditos: 4, dificuldade: 2
-id 20 LinguagensDeProgramacao, creditos: 4, dificuldade: 1
+id 20 LinguagensDeProgramacao, creditos: 4, dificuldade: 2
 id 21 BancosDeDados, creditos: 4, dificuldade: 2
-id 22 EngenhariaDeSoftware, creditos: 4, dificuldade: 3
-id 23 IntroducaoInteligenciaArtificial, creditos: 4, dificuldade: 3
+id 22 EngenhariaDeSoftware, creditos: 4, dificuldade: 2
+id 23 IntroducaoInteligenciaArtificial, creditos: 4, dificuldade: 1
 id 24 ProgramacaoConcorrente, creditos: 4, dificuldade: 3
-id 25 SistemasDeInformacao, creditos: 4, dificuldade: 2
+id 25 SistemasDeInformacao, creditos: 4, dificuldade: 3
 id 26 SoftwareBasico, creditos: 4, dificuldade: 2
 id 27 Automatos&Computabilidade, creditos: 6, dificuldade: 3
-id 28 ComputacaoExperimental, creditos: 4, dificuldade: 1
+id 28 ComputacaoExperimental, creditos: 4, dificuldade: 2
 id 29 FundamentosSistemasOperacionais, creditos: 4, dificuldade: 3
 id 30 Projeto&AnaliseDeAlgoritmos, creditos: 4, dificuldade: 2
 id 31 SegurancaComputacional, creditos: 4, dificuldade: 2
@@ -90,7 +90,7 @@ receive: RedesDeComputadores (16)
 }
 edge
 {
-source: EstruturasDeDados (8)
+source: FundamentosTeoricosDaComputacao (2)
 receive: LogicaComputacional1 (17)
 }
 edge
