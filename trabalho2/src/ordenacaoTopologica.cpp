@@ -10,9 +10,9 @@ void ordenacaoTopologicaAux(Vertice& v, map<string,bool>& visitados, deque<Verti
 
 	visitados[v.id.getNome()] = true;
 
-	for(Vertice* v2: v.adjacentes)
-		if (!visitados[v2->id.getNome()])
-			ordenacaoTopologicaAux(*v2, visitados, fila_ordenacao);
+	for(Vertice* w: v.adjacentes)
+		if (!visitados[w->id.getNome()])
+			ordenacaoTopologicaAux(*w, visitados, fila_ordenacao);
 
 	fila_ordenacao.push_front(v);
 }

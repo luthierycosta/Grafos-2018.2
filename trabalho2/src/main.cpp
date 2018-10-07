@@ -2,7 +2,9 @@
 #include "../headers/vertice.h"
 #include "../headers/disciplina.h"
 #include "../headers/lerArquivo.h"
+#include "../headers/ordenacaoTopologica.h"
 #include <iostream>
+#include <deque>
 
 using namespace std;
 
@@ -18,6 +20,12 @@ int main() {
 */
 	lerArquivo(grafo2, "arquivos/FluxoSend.txt");
 	cout << grafo2 << endl;
+
+	deque<Vertice> ordenacao = ordenacaoTopologica(grafo2);
+
+	cout << "ORDENAÇÃO TOPOLÓGICA: " << endl;
+	for(int i = 0; i < (int)ordenacao.size(); i++)
+		cout << i+1 <<". "<< ordenacao[i].id.getNome() << endl;;
 
 	return 0;
 }

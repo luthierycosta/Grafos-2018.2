@@ -1,6 +1,7 @@
 #include "grafo.h"
 #include "vertice.h"
 #include <deque>
+#include <map>
 
 using namespace std;
 
