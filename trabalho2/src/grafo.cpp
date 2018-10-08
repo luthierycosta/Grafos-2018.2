@@ -74,6 +74,20 @@ int Grafo::grau() {
 	return res;
 }
 
+Grafo Grafo::inverso() {
+	Grafo grafoInverso;
+
+	for(Vertice& v: this->vertices)
+		grafoInverso.addVertice(v.id.getNome(), v.id.getCreditos(), v.id.getDificuldade(), v.id.getPosicao());
+
+	for(Vertice& v: this->vertices)
+		for(Vertice* w: v.adjacentes)
+			grafoInverso.addAresta(w->id.getNome(), v.id.getNome());
+
+	return grafoInverso;
+
+}
+
 ostream& operator <<(ostream& os, const Grafo& grafo) {
 	os << "\nGRAFO:\n";
 	for(const Vertice v: grafo.vertices)

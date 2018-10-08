@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void lerArquivo(Grafo& grafoFluxo, Grafo& grafoPre, string nome_arquivo){
+void lerArquivo(Grafo& grafo, string nome_arquivo){
 	
 	FILE* arquivo = fopen((char*)nome_arquivo.c_str(), "r");
 
@@ -29,18 +29,14 @@ void lerArquivo(Grafo& grafoFluxo, Grafo& grafoPre, string nome_arquivo){
 			if(strstr(linha, "id ")){
 				id++;
 				sscanf(linha, "id %*d %[^,], %*s %d, %*s %d", Fdisciplina, &Fcreditos, &Fdificuldade);
-				//printf("id: %d|disciplina: %s| creditos: %d| dificuldade: %d\n", id, Fdisciplina, Fcreditos, Fdificuldade);
-				grafoFluxo.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
-				grafoPre.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
+				grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
 			}
 			else if(strstr(linha, "source: ")){
 				sscanf(linha, "%*s %s (%*d)", Fsource);
 			}
 			else if(strstr(linha, "receive:")){
 				sscanf(linha, "%*s %s (%*d)", Freceive);
-				//printf("%s é pre requisito de %s\n", Fsource, Freceive);
-				grafoFluxo.addAresta(Fsource, Freceive);
-				grafoPre.addAresta(Freceive, Fsource);
+				grafo.addAresta(Fsource, Freceive);
 			}
 			else continue;
 		}

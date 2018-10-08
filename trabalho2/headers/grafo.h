@@ -101,6 +101,15 @@ public:
 	int grau();
 
 	/**
+	 * @brief      Obtém o grafo inverso deste grafo.
+	 * 
+	 * Para cada aresta (v, w) de um grafo direcionado G, seu inverso terá a aresta (w, v).
+	 *
+	 * @return     O grafo inverso.
+	 */
+	Grafo inverso();
+
+	/**
 	 * @brief      Método externo que permite imprimir cada vértice do grafo na tela
 	 * usando std::cout.
 	 *

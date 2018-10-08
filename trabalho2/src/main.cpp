@@ -10,11 +10,10 @@ using namespace std;
 
 int main() {
 
-	Grafo grafoFluxo, grafoPre;
+	Grafo grafoFluxo;
 
-	lerArquivo(grafoFluxo, grafoPre, "FluxoSend.txt");
+	lerArquivo(grafoFluxo, "arquivos/FluxoSend.txt");
 	cout << grafoFluxo << endl;
-	//cout << "grafo de prerequisitos:" << grafoPre << endl;
 
 	deque<Vertice> ordenacao = ordenacaoTopologica(grafoFluxo);
 	
@@ -22,6 +21,9 @@ int main() {
 	for(int i = 0; i < (int)ordenacao.size(); i++)
 		cout << i+1 <<". "<< ordenacao[i].id.getNome() << endl;;
 	
+	Grafo grafoPre = grafoFluxo.inverso();
+	cout << "grafo de prerequisitos:" << grafoPre << endl;
+
 	deque<Vertice> ordenacaoInversa = ordenacaoTopologica(grafoPre);
 	/*
 	cout << "ORDENAÇÃO TOPOLÓGICA INVERSA: " << endl;
