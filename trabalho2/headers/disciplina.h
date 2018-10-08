@@ -10,7 +10,6 @@ class Disciplina {
 	string nome;
 	int creditos;
 	int dificuldade;
-	int posicao;
 
 public:
 	/**
@@ -27,12 +26,11 @@ public:
 	 * @param[in]  _creditos     A quantidade de créditos da matéria.
 	 * @param[in]  _dificuldade  A dificuldade da matéria.
 	 */
-	Disciplina(string _nome, int _creditos, int _dificuldade, int _posicao);
+	Disciplina(string _nome, int _creditos, int _dificuldade);
 
 	string getNome();
 	int getCreditos();
 	int getDificuldade();
-	int getPosicao();
 	
 	/**
 	 * @brief      Obtém o "peso" da matéria, usado no cálculo dos caminhos críticos do grafo.
@@ -66,10 +64,6 @@ public:
 	 */
 	friend bool operator==(const Disciplina& lhs, const string& rhs);
 
-	/**
-	 * @brief      Método que permite se imprimir uma disciplina (ou seja, seu nome)
-	 * na tela usando std::cout.
-	 */
 	friend ostream& operator<<(ostream& os, const Disciplina& disc);
 };
 

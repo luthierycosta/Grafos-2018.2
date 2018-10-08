@@ -50,47 +50,47 @@ public:
 	/**
 	 * @brief      Verifica se uma dada disciplina está no grafo buscando pelo seu nome.
 	 *
-	 * @param[in]  id    O nome da disciplina.
+	 * @param[in]  nome    O nome da disciplina.
 	 *
 	 * @return     true, caso o vértice exista no grafo; false, caso contrário.
 	 */
-	bool existeVertice(string id);
+	bool existeVertice(string nome);
 
 	/**
 	 * @brief      Retorna uma referência para o vértice de nome informado.
 	 *
-	 * @param[in]  id    O nome da disciplina.
+	 * @param[in]  nome    O nome da disciplina.
 	 *
 	 * @return     O vértice encontrado, caso exista. Lança uma exceção, caso contrário.
 	 */
-	Vertice& getVertice(string id);
+	Vertice& getVertice(string nome);
 
 	/**
 	 * @brief      Adiciona uma aresta direcionada do vértice a para o vértice b,
 	 * se ela ainda não existe.
 	 * 
-	 * @param[in]  id_a  O nome da disciplina a.
-	 * @param[in]  id_b  O nome da disciplina b.
+	 * @param[in]  nome_a  O nome da disciplina a.
+	 * @param[in]  nome_b  O nome da disciplina b.
 	 */
-	void addAresta(string id_a, string id_b);
+	void addAresta(string nome_a, string nome_b);
 
 	/**
 	 * @brief      Remove a aresta entre o vértice a e o vértice b, caso ela exista.
 	 *
-	 * @param[in]  id_a  O nome da disciplina a.
-	 * @param[in]  id_b  O nome da disciplina b.
+	 * @param[in]  nome_a  O nome da disciplina a.
+	 * @param[in]  nome_b  O nome da disciplina b.
 	 */
-	void removeAresta(string id_a, string id_b);
+	void removeAresta(string nome_a, string nome_b);
 
 	/**
 	 * @brief      Checa se existe uma aresta entre dois vértices a e b buscando pelos seus nomes.
 	 *
-	 * @param[in]  id_a  O nome da disciplina a.
-	 * @param[in]  id_b  O nome da disciplina b.
+	 * @param[in]  nome_a  O nome da disciplina a.
+	 * @param[in]  nome_b  O nome da disciplina b.
 	 *
 	 * @return     true, caso exista uma aresta; false, caso contrário.
 	 */
-	bool existeAresta(string id_a, string id_b);
+	bool existeAresta(string nome_a, string nome_b);
 
 	/**
 	 * @brief      Recupera o grau do grafo, isto é,

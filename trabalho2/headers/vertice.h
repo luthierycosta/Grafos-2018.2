@@ -8,6 +8,7 @@
 #include "disciplina.h"
 #include <vector>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -15,12 +16,11 @@ using namespace std;
  * @brief      Classe Vértice, cuja informação representa uma disciplina da UnB em um grafo.
  */
 class Vertice {
-public:
-	/**
-	 * O 'nome' ou 'valor' do vértice - uma disciplina.
-	 */
-	Disciplina id;
+private:
+	int id;				/** O id, em algumas funções usado para representar o índice do vértice. */
+	Disciplina label;	/** O rótulo do vértice - uma disciplina. */
 
+public:
 	/**
 	 * Lista de adjacências deste vértice,
 	 * onde cada item é um ponteiro ao vértice correspondente no grafo.
@@ -28,11 +28,15 @@ public:
 	vector<Vertice*> adjacentes;
 
 	/**
-	 * @brief      Cria um vértice com o id especificado.
-	 *
-	 * @param[in]  new_id	O id.
+	 * @brief      Cria um vértice com o id e informações da disciplina especificados.
 	 */
-	Vertice(string nome, int creditos, int dificuldade, int posicao);
+	Vertice(string nome, int creditos, int dificuldade, int id);
+
+	int getId();			/** Retorna o id do vértice. */
+	string getNome();		/** Retorna o nome da disciplina (label). */
+	int getCreditos();		/** Retorna os créditos da disciplina (label). */
+	int getDificuldade();	/** Retrona a dificuldade da disciplina (label). */
+	int peso();				/** Retorna o peso da disciplina (label). */
 
 	/**
 	 * @brief      Insere um vértice, ou melhor, uma referência para ele, na lista de adjacências.

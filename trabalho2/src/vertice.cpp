@@ -2,11 +2,33 @@
 #include "../headers/disciplina.h"
 #include <iostream>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
-Vertice::Vertice(string nome, int creditos, int dificuldade, int posicao) {
-	this->id = Disciplina(nome, creditos, dificuldade, posicao);
+Vertice::Vertice(string nome, int creditos, int dificuldade, int id) {
+	this->id = id;
+	this->label = Disciplina(nome, creditos, dificuldade);
+}
+
+int Vertice::getId() {
+	return id;
+}
+
+string Vertice::getNome() {
+	return label.getNome();
+}
+
+int Vertice::getCreditos() {
+	return label.getCreditos();
+}
+
+int Vertice::getDificuldade() {
+	return label.getDificuldade();
+}
+
+int Vertice::peso() {
+	return label.peso();
 }
 
 void Vertice::push_back(Vertice* v) {
@@ -52,9 +74,9 @@ double Vertice::coefAglomeracao() {
 }
 
 ostream& operator <<(ostream& os, const Vertice& vert) {
-	os << "["<< vert.id <<"] - ";
+	os << "["<< vert.label <<"] - ";
 	for (Vertice* v: vert.adjacentes)
-		os << v->id << "; ";
+		os << v->label << "; ";
 
 	os << endl;
 	return os;

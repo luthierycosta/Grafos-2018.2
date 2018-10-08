@@ -9,10 +9,10 @@ using namespace std;
 
 void ordenacaoTopologicaAux(Vertice& v, map<string,bool>& visitados, deque<Vertice>& fila_ordenacao) {
 
-	visitados[v.id.getNome()] = true;
+	visitados[v.getNome()] = true;
 
 	for(Vertice* w: v.adjacentes)
-		if (!visitados[w->id.getNome()])
+		if (!visitados[w->getNome()])
 			ordenacaoTopologicaAux(*w, visitados, fila_ordenacao);
 
 	fila_ordenacao.push_front(v);
@@ -24,10 +24,10 @@ deque<Vertice> ordenacaoTopologica(Grafo& grafo) {
 	deque<Vertice> fila_ordenacao;
 
 	for(Vertice& v: grafo.vertices)
-		visitados[v.id.getNome()] = false;
+		visitados[v.getNome()] = false;
 
 	for(Vertice& v: grafo.vertices)
-		if (!visitados[v.id.getNome()])
+		if (!visitados[v.getNome()])
 			ordenacaoTopologicaAux(v, visitados, fila_ordenacao);
 
 	return fila_ordenacao;
@@ -41,8 +41,8 @@ vector<int> caminhoCriticoAux(int n, vector<int>& distancia, Grafo& grafoPre, de
 	}
 	reverse(requisitos.begin(), requisitos.end());
 	for(Vertice* v: requisitos){
-		if(distancia[n] == distancia[v->id.getPosicao()] + ordenacao[n-1].id.peso()){
-			caminhoCriticoAux(v->id.getPosicao(), distancia, grafoPre, ordenacao, camCriticoAux);
+		if(distancia[n] == distancia[v->getId()] + ordenacao[n-1].peso()){
+			caminhoCriticoAux(v->getId(), distancia, grafoPre, ordenacao, camCriticoAux);
 		}
 	}
 	return camCriticoAux;
@@ -58,12 +58,12 @@ void caminhoCritico(Grafo& grafoFluxo) {
 	reverse(ordenacaoInversa.begin(), ordenacaoInversa.end());	
 	for(Vertice& v: ordenacaoInversa){ // achar a distancia maxima de cada vertice
 		if(v.grau() <= 0){
-			distancia[v.id.getPosicao()] = v.id.peso();	
+			distancia[v.getId()] = v.peso();	
 		}
 		else{
 			vector<Vertice*> requisitos = v.adjacentes;
 			for(int i = 0; i < requisitos.size(); i++){
-				distancia[v.id.getPosicao()] = max(distancia[v.id.getPosicao()], distancia[requisitos[i]->id.getPosicao()] + v.id.peso());
+				distancia[v.getId()] = max(distancia[v.getId()], distancia[requisitos[i]->getId()] + v.peso());
 			}
 		}
 	}
@@ -83,7 +83,7 @@ void caminhoCritico(Grafo& grafoFluxo) {
 	reverse(camCritico.begin(), camCritico.end());
 	printf("\nCaminho Crítico:\n");
 	for(int i=0; i<camCritico.size(); i++){
-		cout << i+1 << "º: " << ordenacaoInversa[camCritico[i]-1].id.getNome() << endl;
+		cout << i+1 << "º: " << ordenacaoInversa[camCritico[i]-1].getNome() << endl;
 	}
 	cout << "Com peso total de " << distancia[aux] << endl;
 }

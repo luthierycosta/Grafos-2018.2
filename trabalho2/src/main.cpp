@@ -19,7 +19,7 @@ int main() {
 	
 	cout << "ORDENAÇÃO TOPOLÓGICA: " << endl;
 	for(int i = 0; i < (int)ordenacao.size(); i++)
-		cout << i+1 <<". "<< ordenacao[i].id.getNome() << endl;;
+		cout << i+1 <<". "<< ordenacao[i].getNome() << endl;;
 	
 	Grafo grafoPre = grafoFluxo.inverso();
 	cout << "grafo de prerequisitos:" << grafoPre << endl;
@@ -28,7 +28,7 @@ int main() {
 	/*
 	cout << "ORDENAÇÃO TOPOLÓGICA INVERSA: " << endl;
 	for(int i = 0; i < (int)ordenacaoInversa.size(); i++)
-		cout << i+1 <<". "<< ordenacaoInversa[i].id.getNome() << endl;;
+		cout << i+1 <<". "<< ordenacaoInversa[i].getNome() << endl;;
 	*/
 
 	caminhoCritico(grafoFluxo);
