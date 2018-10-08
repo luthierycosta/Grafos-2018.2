@@ -32,7 +32,7 @@ public:
 	 *
 	 * @param[in]  new_id	O id.
 	 */
-	Vertice(string nome, int creditos, int dificuldade);
+	Vertice(string nome, int creditos, int dificuldade, int posicao);
 
 	/**
 	 * @brief      Insere um vértice, ou melhor, uma referência para ele, na lista de adjacências.

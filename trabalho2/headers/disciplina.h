@@ -10,6 +10,7 @@ class Disciplina {
 	string nome;
 	int creditos;
 	int dificuldade;
+	int posicao;
 
 public:
 	/**
@@ -26,11 +27,12 @@ public:
 	 * @param[in]  _creditos     A quantidade de créditos da matéria.
 	 * @param[in]  _dificuldade  A dificuldade da matéria.
 	 */
-	Disciplina(string _nome, int _creditos, int _dificuldade);
+	Disciplina(string _nome, int _creditos, int _dificuldade, int _posicao);
 
 	string getNome();
 	int getCreditos();
 	int getDificuldade();
+	int getPosicao();
 	
 	/**
 	 * @brief      Obtém o "peso" da matéria, usado no cálculo dos caminhos críticos do grafo.

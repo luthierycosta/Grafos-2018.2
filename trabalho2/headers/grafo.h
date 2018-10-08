@@ -45,7 +45,7 @@ public:
 	 * @param[in]  creditos     A qtd. de créditos da disciplina.
 	 * @param[in]  dificuldade  A dificuldade da disciplina.
 	 */
-	void addVertice(string nome, int creditos, int dificuldade);
+	void addVertice(string nome, int creditos, int dificuldade, int posicao);
 
 	/**
 	 * @brief      Verifica se uma dada disciplina está no grafo buscando pelo seu nome.
