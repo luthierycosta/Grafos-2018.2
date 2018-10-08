@@ -3,8 +3,11 @@
 #include <deque>
 #include <map>
 #include <string>
+#include <algorithm> // for using reverse in a vector
 
 using namespace std;
+
+vector<int> camCriticoAux;
 
 void ordenacaoTopologicaAux(Vertice& v, map<string,bool>& visitados, deque<Vertice>& fila_ordenacao) {
 
@@ -33,51 +36,53 @@ deque<Vertice> ordenacaoTopologica(Grafo& grafo) {
 }
 
 vector<int> caminhoCriticoAux(int n, vector<int> distancia, Grafo& grafoPre, deque<Vertice> ordenacao){
-	vector<int> camCritico;
-	camCritico.push_back(n);
-	vector<Vertice*> requisitos = ordenacao[n].adjacentes;//-- tentando adquirir numa lista de vertices os pré requisitos pro vertice n
-	for(Vertice* v: requisitos){
-		if(distancia[n] == distancia[v->id.getPosicao()] + v->id.peso()){
-			caminhoCriticoAux(v->id.getPosicao(), distancia, grafoPre, ordenacao);
-		}else
-			continue;
+	camCriticoAux.push_back(n);
+	vector<Vertice*> requisitos = ordenacao[n-1].adjacentes;
+	if(requisitos.size() < 1){
+		return camCriticoAux;	
 	}
-	return camCritico;
+	reverse(requisitos.begin(), requisitos.end());
+	for(Vertice* v: requisitos){
+		if(distancia[n] == distancia[v->id.getPosicao()] + ordenacao[n-1].id.peso()){
+			caminhoCriticoAux(v->id.getPosicao(), distancia, grafoPre, ordenacao);
+		}
+	}
+	return camCriticoAux;
 }
 
 void caminhoCritico(Grafo& grafoFluxo, Grafo& grafoPre){
 	deque<Vertice> ordenacao = ordenacaoTopologica(grafoFluxo);
 	deque<Vertice> ordenacaoInversa = ordenacaoTopologica(grafoPre);
 	vector<int> distancia((int)ordenacao.size(), 0); //vector de distancias com nVertices posições todas iniciadas com 0
-	for(Vertice& v: ordenacao){ // achar a distancia maxima de cada vertice
-		printf("Distancia do vertice %d antes = %d| peso do vertice = %d\n", v.id.getPosicao(), distancia[v.id.getPosicao()], v.id.peso());
-		if(v.grau() <= 0){//****IMPORTANTE!******, o grau que está conferindo é o grau de saída e não o de entrada, como deveria ser. isso tá zoando o resto do código (to pensando positivamente aq, as vezes tem mais problemas)
-			distancia[v.id.getPosicao()] = ordenacao[v.id.getPosicao()].id.peso();
-			printf("Esse é o primeiro\n");		
+	reverse(ordenacaoInversa.begin(), ordenacaoInversa.end());	
+	for(Vertice& v: ordenacaoInversa){ // achar a distancia maxima de cada vertice
+		if(v.grau() <= 0){
+			distancia[v.id.getPosicao()] = v.id.peso();	
 		}
 		else{
 			vector<Vertice*> requisitos = v.adjacentes;
-			printf("ah, o tamanho de requisitos é %d\n", (int)requisitos.size());
 			for(int i = 0; i < requisitos.size(); i++){
-				distancia[v.id.getPosicao()] = max(distancia[v.id.getPosicao()], distancia[i] + ordenacaoInversa[v.id.getPosicao()].id.peso());
-				printf("visitando o %dº vertice pre requisito, que é = ", i);
-				cout << *requisitos[i] << endl;
-				printf("e a distancia maxima agora é %d\n", distancia[v.id.getPosicao()]);
+				distancia[v.id.getPosicao()] = max(distancia[v.id.getPosicao()], distancia[requisitos[i]->id.getPosicao()] + v.id.peso());
 			}
-			printf("Esse nao\n");	
 		}
-		printf("Distancia do vertice %d = %d\n\n", v.id.getPosicao(), distancia[v.id.getPosicao()]);
 	}
-	int maximo;
-	for(int i=1; i< (int)ordenacao.size(); i++){ // achar a maior distancia entre todas as distancias (aka vertice final do caminho critico)
-		maximo = max(distancia[i], distancia[i-1]);
+	int maximo=0, aux;
+	for(int i=1; i< (int)ordenacaoInversa.size(); i++){	
+		aux = max(distancia[i], distancia[i-1]);
+		maximo = max(aux, maximo);
 	}
-	vector<int> camCritico = caminhoCriticoAux(maximo, distancia, grafoPre, ordenacao);
+	for(int i=0; i< (int)ordenacaoInversa.size(); i++){	
+		if(distancia[i]==maximo)	
+			aux = i;
+	}
+
+	vector<int> camCritico = caminhoCriticoAux(aux, distancia, grafoPre, ordenacaoInversa);
 	
-	for(int i= (int)camCritico.size(); i>0; i--){ //printa os vertices do caminho critico (em ordem inversa pq comecei a procurar a partir do ultimo)
-		printf("Caminho Crítico:\n");
-		cout << ordenacao[i].id.getNome() << endl;
-		printf("Com %d de peso total.\n", maximo);
+	reverse(camCritico.begin(), camCritico.end());
+	printf("\nCaminho Crítico:\n");
+	for(int i=0; i<camCritico.size(); i++){
+		cout << i+1 << "º: " << ordenacaoInversa[camCritico[i]-1].id.getNome() << endl;
 	}
+	cout << "Com peso total de " << distancia[aux] << endl;
 }
 
