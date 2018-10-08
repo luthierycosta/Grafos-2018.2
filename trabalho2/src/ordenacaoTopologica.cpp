@@ -7,8 +7,6 @@
 
 using namespace std;
 
-vector<int> camCriticoAux;
-
 void ordenacaoTopologicaAux(Vertice& v, map<string,bool>& visitados, deque<Vertice>& fila_ordenacao) {
 
 	visitados[v.id.getNome()] = true;
@@ -35,7 +33,7 @@ deque<Vertice> ordenacaoTopologica(Grafo& grafo) {
 	return fila_ordenacao;
 }
 
-vector<int> caminhoCriticoAux(int n, vector<int> distancia, Grafo& grafoPre, deque<Vertice> ordenacao){
+vector<int> caminhoCriticoAux(int n, vector<int>& distancia, Grafo& grafoPre, deque<Vertice>& ordenacao, vector<int>& camCriticoAux){
 	camCriticoAux.push_back(n);
 	vector<Vertice*> requisitos = ordenacao[n-1].adjacentes;
 	if(requisitos.size() < 1){
@@ -44,13 +42,16 @@ vector<int> caminhoCriticoAux(int n, vector<int> distancia, Grafo& grafoPre, deq
 	reverse(requisitos.begin(), requisitos.end());
 	for(Vertice* v: requisitos){
 		if(distancia[n] == distancia[v->id.getPosicao()] + ordenacao[n-1].id.peso()){
-			caminhoCriticoAux(v->id.getPosicao(), distancia, grafoPre, ordenacao);
+			caminhoCriticoAux(v->id.getPosicao(), distancia, grafoPre, ordenacao, camCriticoAux);
 		}
 	}
 	return camCriticoAux;
 }
 
-void caminhoCritico(Grafo& grafoFluxo, Grafo& grafoPre){
+void caminhoCritico(Grafo& grafoFluxo) {
+
+	Grafo grafoPre = grafoFluxo.inverso();
+
 	deque<Vertice> ordenacao = ordenacaoTopologica(grafoFluxo);
 	deque<Vertice> ordenacaoInversa = ordenacaoTopologica(grafoPre);
 	vector<int> distancia((int)ordenacao.size(), 0); //vector de distancias com nVertices posições todas iniciadas com 0
@@ -76,7 +77,8 @@ void caminhoCritico(Grafo& grafoFluxo, Grafo& grafoPre){
 			aux = i;
 	}
 
-	vector<int> camCritico = caminhoCriticoAux(aux, distancia, grafoPre, ordenacaoInversa);
+	vector<int> camCriticoAux;
+	vector<int> camCritico = caminhoCriticoAux(aux, distancia, grafoPre, ordenacaoInversa, camCriticoAux);
 	
 	reverse(camCritico.begin(), camCritico.end());
 	printf("\nCaminho Crítico:\n");

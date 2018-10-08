@@ -85,7 +85,6 @@ Grafo Grafo::inverso() {
 			grafoInverso.addAresta(w->id.getNome(), v.id.getNome());
 
 	return grafoInverso;
-
 }
 
 ostream& operator <<(ostream& os, const Grafo& grafo) {

@@ -15,21 +15,20 @@ void lerArquivo(Grafo& grafo, string nome_arquivo){
 	
 	FILE* arquivo = fopen((char*)nome_arquivo.c_str(), "r");
 
-	if(!arquivo) {
+	if(!arquivo) {							// checa se o arquivo foi lido
 		printf("Erro ao ler arquivo\n");
 		exit(-1);	
 	} else{
-		
+		//declara as variáveis que serão usadas para armazenar dados do arquivo
 		char linha[MAXLENGTH], Fdisciplina[MAXLENGTH], Fsource[MAXLENGTH], Freceive[MAXLENGTH];
 		int Fcreditos, Fdificuldade;
 		int id=0;
 		
-		while(fgets(linha, MAXLENGTH, arquivo)){
+		while(fgets(linha, MAXLENGTH, arquivo)){		//enquanto não chegar no fim do arquivo
 					
 			if(strstr(linha, "id ")){
-				id++;
 				sscanf(linha, "id %*d %[^,], %*s %d, %*s %d", Fdisciplina, &Fcreditos, &Fdificuldade);
-				grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
+				grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade, ++id);	// os id's começam em 1
 			}
 			else if(strstr(linha, "source: ")){
 				sscanf(linha, "%*s %s (%*d)", Fsource);

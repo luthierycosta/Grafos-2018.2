@@ -31,7 +31,7 @@ int main() {
 		cout << i+1 <<". "<< ordenacaoInversa[i].id.getNome() << endl;;
 	*/
 
-	caminhoCritico(grafoFluxo, grafoPre);
+	caminhoCritico(grafoFluxo);
 
 	return 0;
 }
