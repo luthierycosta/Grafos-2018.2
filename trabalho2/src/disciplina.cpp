@@ -6,10 +6,11 @@ using namespace std;
 
 Disciplina::Disciplina(){}
 
-Disciplina::Disciplina(string _nome, int _creditos, int _dificuldade) {
+Disciplina::Disciplina(string _nome, int _creditos, int _dificuldade, int _posicao) {
 	this->nome = _nome;
 	this->creditos = _creditos;
 	this->dificuldade = _dificuldade;
+	this->posicao = _posicao;
 }
 
 string Disciplina::getNome(){
@@ -22,6 +23,10 @@ int Disciplina::getCreditos(){
 
 int Disciplina::getDificuldade(){
 	return this->dificuldade;
+}
+
+int Disciplina::getPosicao(){
+	return this->posicao;
 }
 
 int Disciplina::peso(){

@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void lerArquivo(Grafo& grafo, string nome_arquivo){
+void lerArquivo(Grafo& grafoFluxo, Grafo& grafoPre, string nome_arquivo){
 	
 	FILE* arquivo = fopen((char*)nome_arquivo.c_str(), "r");
 
@@ -22,15 +22,16 @@ void lerArquivo(Grafo& grafo, string nome_arquivo){
 		
 		char linha[MAXLENGTH], Fdisciplina[MAXLENGTH], Fsource[MAXLENGTH], Freceive[MAXLENGTH];
 		int Fcreditos, Fdificuldade;
-		//int id=0;
+		int id=0;
 		
 		while(fgets(linha, MAXLENGTH, arquivo)){
 					
 			if(strstr(linha, "id ")){
-				//id++;
+				id++;
 				sscanf(linha, "id %*d %[^,], %*s %d, %*s %d", Fdisciplina, &Fcreditos, &Fdificuldade);
 				//printf("id: %d|disciplina: %s| creditos: %d| dificuldade: %d\n", id, Fdisciplina, Fcreditos, Fdificuldade);
-				grafo.addVertice(Fdisciplina, Fcreditos, Fdificuldade);
+				grafoFluxo.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
+				grafoPre.addVertice(Fdisciplina, Fcreditos, Fdificuldade, id);
 			}
 			else if(strstr(linha, "source: ")){
 				sscanf(linha, "%*s %s (%*d)", Fsource);
@@ -38,7 +39,8 @@ void lerArquivo(Grafo& grafo, string nome_arquivo){
 			else if(strstr(linha, "receive:")){
 				sscanf(linha, "%*s %s (%*d)", Freceive);
 				//printf("%s é pre requisito de %s\n", Fsource, Freceive);
-				grafo.addAresta(Fsource, Freceive);
+				grafoFluxo.addAresta(Fsource, Freceive);
+				grafoPre.addAresta(Freceive, Fsource);
 			}
 			else continue;
 		}

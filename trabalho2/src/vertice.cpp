@@ -5,8 +5,8 @@
 
 using namespace std;
 
-Vertice::Vertice(string nome, int creditos, int dificuldade) {
-	this->id = Disciplina(nome, creditos, dificuldade);
+Vertice::Vertice(string nome, int creditos, int dificuldade, int posicao) {
+	this->id = Disciplina(nome, creditos, dificuldade, posicao);
 }
 
 void Vertice::push_back(Vertice* v) {

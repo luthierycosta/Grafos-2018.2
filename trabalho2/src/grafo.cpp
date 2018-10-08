@@ -10,9 +10,9 @@ using namespace std;
 
 Grafo::Grafo(){}
 
-void Grafo::addVertice(string nome, int creditos, int dificuldade) {
+void Grafo::addVertice(string nome, int creditos, int dificuldade, int posicao) {
 	if (!existeVertice(nome))
-		vertices.push_back(Vertice(nome, creditos, dificuldade));
+		vertices.push_back(Vertice(nome, creditos, dificuldade, posicao));
 	else
 		cout << "Vértice ["<< nome <<"] já existe no grafo.";
 }
