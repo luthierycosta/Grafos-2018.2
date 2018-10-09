@@ -62,7 +62,7 @@ void caminhoCritico(Grafo& grafoFluxo) {
 		}
 		else{
 			vector<Vertice*> requisitos = v.adjacentes;
-			for(int i = 0; i < requisitos.size(); i++){
+			for(int i = 0; i < (int)requisitos.size(); i++){
 				distancia[v.getId()] = max(distancia[v.getId()], distancia[requisitos[i]->getId()] + v.peso());
 			}
 		}
@@ -82,7 +82,7 @@ void caminhoCritico(Grafo& grafoFluxo) {
 	
 	reverse(camCritico.begin(), camCritico.end());
 	printf("\nCaminho Crítico:\n");
-	for(int i=0; i<camCritico.size(); i++){
+	for(int i=0; i < (int)camCritico.size(); i++){
 		cout << i+1 << "º: " << ordenacaoInversa[camCritico[i]-1].getNome() << endl;
 	}
 	cout << "Com peso total de " << distancia[aux] << endl;
