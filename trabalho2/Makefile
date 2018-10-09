@@ -14,7 +14,7 @@ OBJ			= $(wildcard *.o)
 all: Grafos1 clean
 
 # executavel
-Grafos1: $(HEADERS) grafo vertice disciplina lerArquivo ordenacaoTopologica
+Grafos1: $(HEADERS) grafo vertice disciplina lerArquivo ordenacaoTopologica caminhoCritico
 	g++ $(FLAGS) -o Grafos2.exe $(SRC_DIR)/main.cpp *.o
 
 # .o's
@@ -33,5 +33,8 @@ ordenacaoTopologica: $(HEADERS) $(SRC_DIR)/ordenacaoTopologica.cpp
 lerArquivo: $(HEADERS) $(SRC_DIR)/lerArquivo.cpp
 	g++ $(FLAGS) -c $(SRC_DIR)/lerArquivo.cpp
 
+caminhoCritico: $(HEADERS) $(SRC_DIR)/caminhoCritico.cpp
+	g++ $(FLAGS) -c $(SRC_DIR)/caminhoCritico.cpp
+	
 clean:
 	rm *.o

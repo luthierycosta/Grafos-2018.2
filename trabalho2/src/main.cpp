@@ -3,6 +3,7 @@
 #include "../headers/disciplina.h"
 #include "../headers/lerArquivo.h"
 #include "../headers/ordenacaoTopologica.h"
+#include "../headers/caminhoCritico.h"
 #include <iostream>
 #include <deque>
 
@@ -16,21 +17,11 @@ int main() {
 	cout << grafoFluxo << endl;
 
 	deque<Vertice> ordenacao = ordenacaoTopologica(grafoFluxo);
-	
+
 	cout << "ORDENAÇÃO TOPOLÓGICA: " << endl;
 	for(int i = 0; i < (int)ordenacao.size(); i++)
 		cout << i+1 <<". "<< ordenacao[i].getNome() << endl;;
 	
-	Grafo grafoPre = grafoFluxo.inverso();
-	cout << "grafo de prerequisitos:" << grafoPre << endl;
-
-	deque<Vertice> ordenacaoInversa = ordenacaoTopologica(grafoPre);
-	/*
-	cout << "ORDENAÇÃO TOPOLÓGICA INVERSA: " << endl;
-	for(int i = 0; i < (int)ordenacaoInversa.size(); i++)
-		cout << i+1 <<". "<< ordenacaoInversa[i].getNome() << endl;;
-	*/
-
 	caminhoCritico(grafoFluxo);
 
 	return 0;
