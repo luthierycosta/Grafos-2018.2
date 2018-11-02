@@ -8,6 +8,10 @@ Vertice::Vertice(int new_id) {
 	this->id = new_id;
 }
 
+int Vertice::getId() {
+	return id;
+}
+
 void Vertice::push_back(Vertice* v) {
 	adjacentes.push_back(v);
 }
@@ -18,7 +22,7 @@ void Vertice::removeAresta(Vertice* v) {
 
 bool Vertice::existeAresta(Vertice* v) {
 	for (Vertice* adj: adjacentes)
-		if (adj->id == v->id)
+		if (adj->getId() == v->getId())
 			return true;
 
 	return false;
@@ -53,7 +57,7 @@ double Vertice::coefAglomeracao() {
 ostream& operator <<(ostream& os, const Vertice& vert) {
 	os << "["<< vert.id <<"] - ";
 	for (Vertice* v: vert.adjacentes)
-		os << v->id << "; ";
+		os << v->getId() << "; ";
 
 	os << endl;
 	return os;

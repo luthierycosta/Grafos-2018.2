@@ -24,7 +24,7 @@ bool Grafo::existeVertice(int id) {
 
 	vector<Vertice>::iterator it;
 	for (it = vertices.begin(); it != vertices.end(); it++)
-		if((*it).id == id)
+		if((*it).getId() == id)
 			return true;
 
 	return false;
@@ -34,7 +34,7 @@ Vertice& Grafo::getVertice(int id) {
 	
 	vector<Vertice>::iterator it;
 	for (it = vertices.begin(); it != vertices.end(); it++)
-		if((*it).id == id)
+		if((*it).getId() == id)
 			return *it;
 
 	throw "Argumento invalido."; 

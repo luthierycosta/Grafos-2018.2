@@ -1,10 +1,13 @@
 #include "../headers/grafo.h"
 #include "../headers/disciplina.h"
+#include <vector>
 #include <algorithm>
 #include <exception>
 #include <iterator>
 #include <iostream>
 #include <string>
+#include <queue>
+#include <functional>
 
 using namespace std;
 
@@ -72,6 +75,58 @@ int Grafo::grau() {
 		res = max(res, v.grau());
 
 	return res;
+}
+
+void Grafo::bfs(Vertice& inicial, function<void (Vertice&)> foo) {
+
+	vector<bool> visitados(vertices.size());		// cria vetor de visitados com |V| espaços
+	queue<Vertice> fila;							// cria fila
+
+	for(Vertice& v: vertices)
+		visitados[v.getId()] = false;				// todos começam com "não visitado"
+
+	visitados[inicial.getId()] = true;
+	fila.push(inicial);						// começa pelo vértice especificado
+
+	while (!fila.empty()) {
+		Vertice v = fila.front();					// visita e depois remove o primeiro da fila
+		foo(v);										// processa segundo a função especificada no argumento
+		fila.pop();
+		
+		for(Vertice* w: v.adjacentes) {				// coloca todos seus adjacentes não visitados na fila
+			if (!visitados[w->getId()]) {
+				visitados[w->getId()] = true;
+				fila.push(*w);
+			}
+		}
+	}
+}
+
+void Grafo::bfs(function<void (Vertice&)> foo) {	// não especificando o vértice inicial, ele usa o primeiro
+	bfs(vertices[0], foo);
+}
+
+void Grafo::dfs(Vertice& inicial, function<void (Vertice&)> foo) {
+
+	vector<bool> visitados(vertices.size());		// cria vetor de visitados com |V| espaços
+	for(Vertice& v: vertices)
+		visitados[v.getId()] = false;				// todos começam com "não visitado"
+
+	dfsAux(inicial, visitados, foo);
+}
+
+void Grafo::dfs(function<void (Vertice&)> foo) {	// não especificando o vértice inicial, ele usa o primeiro
+	dfs(vertices[0], foo);
+}
+
+void Grafo::dfsAux(Vertice& v, vector<bool>& visitados, function<void (Vertice&)> foo) {
+
+	visitados[v.getId()] = true;
+	foo(v);
+
+	for(Vertice* w: v.adjacentes)
+		if(!visitados[w->getId()])
+			dfsAux(*w, visitados, foo);
 }
 
 Grafo Grafo::inverso() {

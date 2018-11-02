@@ -14,13 +14,13 @@ int main() {
 
 	cout << "GRAUS DOS VÉRTICES" << endl; 
 	for(Vertice& v: grafo1.vertices)
-		cout << "Vértice "<< v.id <<" tem grau "<< v.grau() << endl;
+		cout << "Vértice "<< v.getId() <<" tem grau "<< v.grau() << endl;
 
 	cout << "Grau do grafo: "<< grafo1.grau() << "\n\n";
 
 	cout << "COEFICIENTES DE AGLOMERAÇÃO:" << endl;
 	for (Vertice& v: grafo1.vertices)
-		cout << "Coeficiente de aglomeração do vértice "<< v.id <<": "<< v.coefAglomeracao() << endl;
+		cout << "Coeficiente de aglomeração do vértice "<< v.getId() <<": "<< v.coefAglomeracao() << endl;
 
 	cout << "Coeficiente de aglomeração médio do grafo: "<< grafo1.coefAglomeracao() << endl;
 

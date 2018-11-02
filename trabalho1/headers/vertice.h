@@ -33,6 +33,8 @@ public:
 	 */
 	Vertice(int new_id);
 
+	int getId();
+	
 	/**
 	 * @brief      Insere um vértice, ou melhor, uma referência para ele, na lista de adjacências.
 	 *

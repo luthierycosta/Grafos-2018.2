@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
@@ -99,6 +100,12 @@ public:
 	 * @return     int	O valor do grau.
 	 */
 	int grau();
+
+	void bfs(Vertice& inicial, function<void (Vertice&)> foo);
+	void bfs(function<void (Vertice&)> foo);
+	void dfs(Vertice& inicial, function<void (Vertice&)> foo);
+	void dfs(function<void (Vertice&)> foo);
+	void dfsAux(Vertice& v, vector<bool>& visitados, function<void (Vertice&)> foo);
 
 	/**
 	 * @brief      Obtém o grafo inverso deste grafo.
