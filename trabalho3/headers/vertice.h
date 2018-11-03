@@ -71,8 +71,9 @@ class Escola: public Vertice {
 public:
 	vector<int> vagas;
 	int vaga_atual;					/** Flag para saber qual das duas vagas estamos analisando.*/
-
-	Escola(int _id);
+	int vaga1, vaga2;
+	Escola(int _id, int _vaga1, int _vaga2);
+	Escola(int _id, int _vaga1);
 	void proximaVaga();				/** Pula para a próxima vaga, quando a primeira já estiver preenchida.*/
 
 	/**
