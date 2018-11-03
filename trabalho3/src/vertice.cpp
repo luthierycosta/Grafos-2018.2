@@ -33,8 +33,15 @@ int Vertice::grau() {
 
 /*---------------------------------------------------------------------------------------*/
 
-Escola::Escola(int _id) {
+Escola::Escola(int _id, int _vaga1, int _vaga2) {
 	id = _id;
+	vagas.push_back(_vaga1);
+	vagas.push_back(_vaga2);
+}
+
+Escola::Escola(int _id, int _vaga1) {
+	id = _id;
+	vagas.push_back(_vaga1);
 }
 
 void Escola::proximaVaga() {
