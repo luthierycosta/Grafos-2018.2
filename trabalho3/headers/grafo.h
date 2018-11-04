@@ -30,9 +30,9 @@ public:
 	
 	Grafo(); 						/** Cria um grafo vazio. */
 	
-	void addVertice(Escola& v); 	/** Adiciona um vértice Escola no vetor respectivo. */
+	void addVertice(Escola v); 	/** Adiciona um vértice Escola no vetor respectivo. */
 	
-	void addVertice(Professor& v);	/** Adiciona um vértice Professor no vetor respectivo. */
+	void addVertice(Professor v);	/** Adiciona um vértice Professor no vetor respectivo. */
 
 	/**
 	 * @brief      Verifica se uma dada escola está entre as escolas do grafo.

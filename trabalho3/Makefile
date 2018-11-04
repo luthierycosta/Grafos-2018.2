@@ -14,7 +14,7 @@ OBJ			= $(wildcard *.o)
 all: Grafos1 clean
 
 # executavel
-Grafos1: $(HEADERS) grafo vertice
+Grafos1: $(HEADERS) grafo vertice lerArquivo
 	g++ $(FLAGS) -o Grafos3.exe $(SRC_DIR)/main.cpp *.o
 
 # .o's
@@ -24,8 +24,8 @@ grafo: $(HEADERS) $(SRC_DIR)/grafo.cpp
 vertice: $(HEADERS) $(SRC_DIR)/vertice.cpp
 	g++ $(FLAGS) -c $(SRC_DIR)/vertice.cpp
 
-#lerArquivo: $(HEADERS) $(SRC_DIR)/lerArquivo.cpp
-#	g++ $(FLAGS) -c $(SRC_DIR)/lerArquivo.cpp
+lerArquivo: $(HEADERS) $(SRC_DIR)/lerArquivo.cpp
+	g++ $(FLAGS) -c $(SRC_DIR)/lerArquivo.cpp
 	
 clean:
 	rm *.o

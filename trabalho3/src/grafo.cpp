@@ -8,18 +8,18 @@ using namespace std;
 
 Grafo::Grafo(){}
 
-void Grafo::addVertice(Escola& e) {
+void Grafo::addVertice(Escola e) {
 	if (!existeEscola(e.id))
 		escolas.push_back(e);
 	else
 		cout << "Escola [E"<< e.id <<"] já existe no grafo.";	
 }
 
-void Grafo::addVertice(Professor& p) {
+void Grafo::addVertice(Professor p) {
 	if (!existeProf(p.id))
-			profs.push_back(p);
-		else
-			cout << "Professor [P"<< p.id <<"] já existe no grafo.";
+		profs.push_back(p);
+	else
+		cout << "Professor [P"<< p.id <<"] já existe no grafo.";
 }
 
 bool Grafo::existeEscola(int id) {
@@ -66,13 +66,10 @@ bool Grafo::existeAresta(int id_esc, int id_prof) {
 }
 
 void Grafo::addAresta(int id_esc, int id_prof) {
-	if (!existeAresta(id_esc, id_prof)) {
-		Vertice* v1 = &findEscola(id_esc);
-		Vertice* v2 = &findProf(id_prof);
-		v1->push_back(v2);
-		v2->push_back(v1);
-	}
-	else cout << "Aresta ("<< id_esc <<", "<< id_prof << ") já existe." << endl;
+	Vertice* v1 = &findEscola(id_esc);
+	Vertice* v2 = &findProf(id_prof);
+	v1->push_back(v2);
+	v2->push_back(v1);
 }
 
 void Grafo::removeAresta(int id_esc, int id_prof) {

@@ -1,5 +1,5 @@
 // lista de professores e preferencias
-// formato (codigo professor, habilitacoes): (Escolas em ordem decrescente de prioridade)
+// formato (codigo professor, habilitacoes): ( Escolas em ordem decrescente de prioridade)
 
 (P1, 3): (E10, E20, E1, E27, E3)
 (P2, 2): (E10, E20, E2, E27, E5)
