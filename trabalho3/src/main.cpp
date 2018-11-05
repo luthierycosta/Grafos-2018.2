@@ -8,7 +8,6 @@ using namespace std;
 
 int main() {
 	Grafo grafo;
-	
 	lerArquivo(grafo, "entradaProj3TAG.txt");
 	cout << grafo << endl;
 	
