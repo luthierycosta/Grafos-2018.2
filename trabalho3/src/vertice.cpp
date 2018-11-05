@@ -35,13 +35,19 @@ int Vertice::grau() {
 
 Escola::Escola(int _id, int _vaga1, int _vaga2) {
 	id = _id;
+	vaga1 = _vaga1;
+	vaga2 = _vaga2;
 	vagas.push_back(_vaga1);
 	vagas.push_back(_vaga2);
+	vaga_atual = 0;
+
 }
 
 Escola::Escola(int _id, int _vaga1) {
 	id = _id;
+	vaga1 = _vaga1;//quero isso
 	vagas.push_back(_vaga1);
+	vaga_atual = 0;
 }
 
 void Escola::proximaVaga() {
