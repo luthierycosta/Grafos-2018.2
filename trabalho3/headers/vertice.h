@@ -70,11 +70,13 @@ public:
 class Escola: public Vertice {
 public:
 	vector<int> vagas;
+	vector<Vertice*> contratados = adjacentes;
 	int vaga_atual;					/** Flag para saber qual das duas vagas estamos analisando.*/
-	int vaga1, vaga2;
 	Escola(int _id, int _vaga1, int _vaga2);
 	Escola(int _id, int _vaga1);
 	void proximaVaga();				/** Pula para a próxima vaga, quando a primeira já estiver preenchida.*/
+	//void contrate(Professor p);
+	bool cheia();
 
 	/**
 	 * @brief      Método externo que permite imprimir as informações da escola
@@ -92,6 +94,7 @@ class Professor: public Vertice {
 public:
 	int habilitacoes;
 	vector<int> preferencia;		/** Cada posição recebe o número de uma escola. A prioridade é decrescente.*/
+	bool empregado;
 
 	/**
 	 * @brief      Constrói um professor com id, nº de habilitações e lista de escolas especificados.

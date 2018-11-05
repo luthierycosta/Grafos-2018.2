@@ -35,8 +35,6 @@ int Vertice::grau() {
 
 Escola::Escola(int _id, int _vaga1, int _vaga2) {
 	id = _id;
-	vaga1 = _vaga1;
-	vaga2 = _vaga2;
 	vagas.push_back(_vaga1);
 	vagas.push_back(_vaga2);
 	vaga_atual = 0;
@@ -45,10 +43,13 @@ Escola::Escola(int _id, int _vaga1, int _vaga2) {
 
 Escola::Escola(int _id, int _vaga1) {
 	id = _id;
-	vaga1 = _vaga1;//quero isso
 	vagas.push_back(_vaga1);
 	vaga_atual = 0;
 }
+
+/*bool Escola::cheia() {
+	return (grau() >= vagas.size());		// grau, aqui, é o número de professores contratados
+}*/
 
 void Escola::proximaVaga() {
 	if(vaga_atual == 1)
@@ -75,6 +76,7 @@ Professor::Professor(int _id, int _habilitacoes, int esc1, int esc2, int esc3, i
 	preferencia.push_back(esc3);
 	preferencia.push_back(esc4);
 	preferencia.push_back(esc5);
+	empregado = false;
 }
 
 ostream& operator <<(ostream& os, const Professor& prof) {

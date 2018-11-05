@@ -79,6 +79,8 @@ public:
 	 */
 	void removeAresta(int id_esc, int id_prof);
 
+	vector< pair<int,int> > matching();
+
 	/**
 	 * @brief      Método externo que permite imprimir cada vértice do grafo na tela
 	 * usando std::cout.

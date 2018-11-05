@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<pair<int, int> > vetor(Grafo& grafo);
-int soma(vector<int> vetor);
+vector<pair<int, int> > matching(Grafo& grafo);
+int soma(vector<int>& vetor);
 
 #endif
