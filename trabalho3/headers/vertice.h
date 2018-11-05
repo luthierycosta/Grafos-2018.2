@@ -69,11 +69,11 @@ public:
 
 class Escola: public Vertice {
 public:
-	vector<int> vagas;				/** Cada inteiro é a quantidade de habilitações requerida para essa vaga. */
+	vector<int> vagas;
 	int vaga_atual;					/** Flag para saber qual das duas vagas estamos analisando.*/
-	
-	Escola(int _id, int _vaga1);				/** Constrói uma escola com 1 vaga. */
-	Escola(int _id, int _vaga1, int _vaga2);	/** Constrói uma escola com 2 vagas. */
+	int vaga1, vaga2;
+	Escola(int _id, int _vaga1, int _vaga2);
+	Escola(int _id, int _vaga1);
 	void proximaVaga();				/** Pula para a próxima vaga, quando a primeira já estiver preenchida.*/
 
 	/**
