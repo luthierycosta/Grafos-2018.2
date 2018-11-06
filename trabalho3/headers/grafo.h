@@ -9,6 +9,8 @@
 #define _GRAFO_H_
 
 #include "vertice.h"
+#include "escola.h"
+#include "professor.h"
 #include <vector>
 #include <iostream>
 
@@ -25,14 +27,15 @@ using namespace std;
  */
 class Grafo {
 public:
-	vector<Escola> escolas;
-	vector<Professor> profs;
+	vector<Escola*> escolas;
+	vector<Professor*> profs;
 	
 	Grafo(); 						/** Cria um grafo vazio. */
+	~Grafo();						/** Deleta os professores e escolas. */
 	
-	void addVertice(Escola v); 	/** Adiciona um vértice Escola no vetor respectivo. */
+	void addVertice(Escola* v); 	/** Adiciona um vértice Escola no vetor respectivo. */
 	
-	void addVertice(Professor v);	/** Adiciona um vértice Professor no vetor respectivo. */
+	void addVertice(Professor* v);	/** Adiciona um vértice Professor no vetor respectivo. */
 
 	/**
 	 * @brief      Verifica se uma dada escola está entre as escolas do grafo.
@@ -48,9 +51,9 @@ public:
 	 */
 	bool existeProf(int id);
 
-	Vertice& findEscola(int id);	/** Retorna uma referência para a escola de nome informado.*/
+	Vertice* findEscola(int id);	/** Retorna uma referência para a escola de nome informado.*/
 	
-	Vertice& findProf(int id);		/** Retorna uma referência para o professor de nome informado.*/
+	Vertice* findProf(int id);		/** Retorna uma referência para o professor de nome informado.*/
 
 	/**
 	 * @brief      Checa se existe uma aresta entre escola e professor especificados.
@@ -79,7 +82,9 @@ public:
 	 */
 	void removeAresta(int id_esc, int id_prof);
 
-	vector< pair<int,int> > matching();
+	void emparelhamento(int max_pares);
+
+	void setCandidatos();
 
 	/**
 	 * @brief      Método externo que permite imprimir cada vértice do grafo na tela
