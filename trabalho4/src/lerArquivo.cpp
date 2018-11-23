@@ -18,14 +18,15 @@ void lerArquivo(Grafo& grafo, string nome_arquivo) {
 		printf("Erro ao ler arquivo\n");
 		exit(-1);	
 	}
-	//declara as variáveis que serão usadas para armazenar dados do arquivo
-	char linha[MAXLENGTH];
-	//int Fid, Fhabilitacoes, Fpref1, Fpref2, Fpref3, Fpref4, Fpref5;
-	//int Fvaga1, Fvaga2;
-	while(fgets(linha, MAXLENGTH, arquivo)){//enquanto não chegar no fim do arquivo
-				
+	int source, target;
+	while(fscanf(arquivo, "%d %d", &source, &target)){//enquanto não chegar no fim do arquivo		
+		
+		if(!grafo.existeVertice(source))
+			grafo.addVertice(new Vertice(source));
+		if(!grafo.existeVertice(target))
+			grafo.addVertice(new Vertice(target));
 
-
+		grafo.addAresta(source, target);
 	}
 
 	fclose(arquivo);

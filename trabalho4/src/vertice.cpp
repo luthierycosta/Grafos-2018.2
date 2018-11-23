@@ -4,7 +4,9 @@
 
 using namespace std;
 
-Vertice::Vertice() {}
+Vertice::Vertice(int id) {
+	this->id = id;
+}
 
 void Vertice::push_back(Vertice* v) {
 	adjacentes.push_back(v);

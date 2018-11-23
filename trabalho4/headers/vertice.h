@@ -21,7 +21,7 @@ public:
 	 */
 	vector<Vertice*> adjacentes;
 
-	Vertice();		/** Cria um vértice vazio. */
+	Vertice(int id);		/** Cria um vértice com o id especificado. */
 
 	void push_back(Vertice* v);	/** Insere um ponteiro para o vértice v na lista de adjacências. */
 

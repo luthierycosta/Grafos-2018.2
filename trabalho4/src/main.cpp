@@ -8,7 +8,7 @@ using namespace std;
 int main() {
 	Grafo grafo;
 	
-	//lerArquivo(grafo, "entradaProj3TAG.txt");
+	lerArquivo(grafo, "email-Eu-core.txt");
 	cout << grafo << endl;
 	
 	return 0;
